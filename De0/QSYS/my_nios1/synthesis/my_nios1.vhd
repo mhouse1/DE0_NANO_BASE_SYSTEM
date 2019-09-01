@@ -8,20 +8,22 @@ use IEEE.numeric_std.all;
 
 entity my_nios1 is
 	port (
-		clk_clk         : in    std_logic                     := '0';             --       clk.clk
-		leds_export     : out   std_logic_vector(7 downto 0);                     --      leds.export
-		reset_reset_n   : in    std_logic                     := '0';             --     reset.reset_n
-		sdram_addr      : out   std_logic_vector(12 downto 0);                    --     sdram.addr
-		sdram_ba        : out   std_logic_vector(1 downto 0);                     --          .ba
-		sdram_cas_n     : out   std_logic;                                        --          .cas_n
-		sdram_cke       : out   std_logic;                                        --          .cke
-		sdram_cs_n      : out   std_logic;                                        --          .cs_n
-		sdram_dq        : inout std_logic_vector(15 downto 0) := (others => '0'); --          .dq
-		sdram_dqm       : out   std_logic_vector(1 downto 0);                     --          .dqm
-		sdram_ras_n     : out   std_logic;                                        --          .ras_n
-		sdram_we_n      : out   std_logic;                                        --          .we_n
-		sdram_clk_clk   : out   std_logic;                                        -- sdram_clk.clk
-		switches_export : in    std_logic_vector(7 downto 0)  := (others => '0')  --  switches.export
+		clk_clk                                      : in    std_logic                     := '0';             --                                      clk.clk
+		fifoed_avalon_uart_0_external_connection_rxd : in    std_logic                     := '0';             -- fifoed_avalon_uart_0_external_connection.rxd
+		fifoed_avalon_uart_0_external_connection_txd : out   std_logic;                                        --                                         .txd
+		leds_export                                  : out   std_logic_vector(7 downto 0);                     --                                     leds.export
+		reset_reset_n                                : in    std_logic                     := '0';             --                                    reset.reset_n
+		sdram_addr                                   : out   std_logic_vector(12 downto 0);                    --                                    sdram.addr
+		sdram_ba                                     : out   std_logic_vector(1 downto 0);                     --                                         .ba
+		sdram_cas_n                                  : out   std_logic;                                        --                                         .cas_n
+		sdram_cke                                    : out   std_logic;                                        --                                         .cke
+		sdram_cs_n                                   : out   std_logic;                                        --                                         .cs_n
+		sdram_dq                                     : inout std_logic_vector(15 downto 0) := (others => '0'); --                                         .dq
+		sdram_dqm                                    : out   std_logic_vector(1 downto 0);                     --                                         .dqm
+		sdram_ras_n                                  : out   std_logic;                                        --                                         .ras_n
+		sdram_we_n                                   : out   std_logic;                                        --                                         .we_n
+		sdram_clk_clk                                : out   std_logic;                                        --                                sdram_clk.clk
+		switches_export                              : in    std_logic_vector(7 downto 0)  := (others => '0')  --                                 switches.export
 	);
 end entity my_nios1;
 
@@ -48,6 +50,25 @@ architecture rtl of my_nios1 is
 			reset_source_reset : out std_logic         -- reset
 		);
 	end component my_nios1_clocks;
+
+	component my_nios1_fifoed_avalon_uart_0 is
+		port (
+			clk           : in  std_logic                     := 'X';             -- clk
+			reset_n       : in  std_logic                     := 'X';             -- reset_n
+			address       : in  std_logic_vector(3 downto 0)  := (others => 'X'); -- address
+			begintransfer : in  std_logic                     := 'X';             -- begintransfer
+			chipselect    : in  std_logic                     := 'X';             -- chipselect
+			read_n        : in  std_logic                     := 'X';             -- read_n
+			write_n       : in  std_logic                     := 'X';             -- write_n
+			writedata     : in  std_logic_vector(31 downto 0) := (others => 'X'); -- writedata
+			readdata      : out std_logic_vector(31 downto 0);                    -- readdata
+			rxd           : in  std_logic                     := 'X';             -- export
+			txd           : out std_logic;                                        -- export
+			irq           : out std_logic;                                        -- irq
+			readyfordata  : out std_logic;                                        -- readyfordata
+			dataavailable : out std_logic                                         -- dataavailable
+		);
+	end component my_nios1_fifoed_avalon_uart_0;
 
 	component my_nios1_jtag_uart is
 		port (
@@ -172,6 +193,13 @@ architecture rtl of my_nios1 is
 			nios2_processor_instruction_master_waitrequest    : out std_logic;                                        -- waitrequest
 			nios2_processor_instruction_master_read           : in  std_logic                     := 'X';             -- read
 			nios2_processor_instruction_master_readdata       : out std_logic_vector(31 downto 0);                    -- readdata
+			fifoed_avalon_uart_0_s1_address                   : out std_logic_vector(3 downto 0);                     -- address
+			fifoed_avalon_uart_0_s1_write                     : out std_logic;                                        -- write
+			fifoed_avalon_uart_0_s1_read                      : out std_logic;                                        -- read
+			fifoed_avalon_uart_0_s1_readdata                  : in  std_logic_vector(31 downto 0) := (others => 'X'); -- readdata
+			fifoed_avalon_uart_0_s1_writedata                 : out std_logic_vector(31 downto 0);                    -- writedata
+			fifoed_avalon_uart_0_s1_begintransfer             : out std_logic;                                        -- begintransfer
+			fifoed_avalon_uart_0_s1_chipselect                : out std_logic;                                        -- chipselect
 			jtag_uart_avalon_jtag_slave_address               : out std_logic_vector(0 downto 0);                     -- address
 			jtag_uart_avalon_jtag_slave_write                 : out std_logic;                                        -- write
 			jtag_uart_avalon_jtag_slave_read                  : out std_logic;                                        -- read
@@ -220,6 +248,7 @@ architecture rtl of my_nios1 is
 			clk           : in  std_logic                     := 'X'; -- clk
 			reset         : in  std_logic                     := 'X'; -- reset
 			receiver0_irq : in  std_logic                     := 'X'; -- irq
+			receiver1_irq : in  std_logic                     := 'X'; -- irq
 			sender_irq    : out std_logic_vector(31 downto 0)         -- irq
 		);
 	end component my_nios1_irq_mapper;
@@ -422,7 +451,7 @@ architecture rtl of my_nios1 is
 		);
 	end component my_nios1_rst_controller_002;
 
-	signal clocks_sys_clk_clk                                            : std_logic;                     -- clocks:sys_clk_clk -> [LEDs:clk, irq_mapper:clk, jtag_uart:clk, mm_interconnect_0:clocks_sys_clk_clk, nios2_processor:clk, onchip_memory:clk, rst_controller:clk, rst_controller_002:clk, sdram:clk, switches:clk, sysid_qsys_0:clock]
+	signal clocks_sys_clk_clk                                            : std_logic;                     -- clocks:sys_clk_clk -> [LEDs:clk, fifoed_avalon_uart_0:clk, irq_mapper:clk, jtag_uart:clk, mm_interconnect_0:clocks_sys_clk_clk, nios2_processor:clk, onchip_memory:clk, rst_controller:clk, rst_controller_002:clk, sdram:clk, switches:clk, sysid_qsys_0:clock]
 	signal nios2_processor_data_master_readdata                          : std_logic_vector(31 downto 0); -- mm_interconnect_0:nios2_processor_data_master_readdata -> nios2_processor:d_readdata
 	signal nios2_processor_data_master_waitrequest                       : std_logic;                     -- mm_interconnect_0:nios2_processor_data_master_waitrequest -> nios2_processor:d_waitrequest
 	signal nios2_processor_data_master_debugaccess                       : std_logic;                     -- nios2_processor:debug_mem_slave_debugaccess_to_roms -> mm_interconnect_0:nios2_processor_data_master_debugaccess
@@ -475,7 +504,15 @@ architecture rtl of my_nios1 is
 	signal mm_interconnect_0_sdram_s1_readdatavalid                      : std_logic;                     -- sdram:za_valid -> mm_interconnect_0:sdram_s1_readdatavalid
 	signal mm_interconnect_0_sdram_s1_write                              : std_logic;                     -- mm_interconnect_0:sdram_s1_write -> mm_interconnect_0_sdram_s1_write:in
 	signal mm_interconnect_0_sdram_s1_writedata                          : std_logic_vector(15 downto 0); -- mm_interconnect_0:sdram_s1_writedata -> sdram:az_data
+	signal mm_interconnect_0_fifoed_avalon_uart_0_s1_chipselect          : std_logic;                     -- mm_interconnect_0:fifoed_avalon_uart_0_s1_chipselect -> fifoed_avalon_uart_0:chipselect
+	signal mm_interconnect_0_fifoed_avalon_uart_0_s1_readdata            : std_logic_vector(31 downto 0); -- fifoed_avalon_uart_0:readdata -> mm_interconnect_0:fifoed_avalon_uart_0_s1_readdata
+	signal mm_interconnect_0_fifoed_avalon_uart_0_s1_address             : std_logic_vector(3 downto 0);  -- mm_interconnect_0:fifoed_avalon_uart_0_s1_address -> fifoed_avalon_uart_0:address
+	signal mm_interconnect_0_fifoed_avalon_uart_0_s1_read                : std_logic;                     -- mm_interconnect_0:fifoed_avalon_uart_0_s1_read -> mm_interconnect_0_fifoed_avalon_uart_0_s1_read:in
+	signal mm_interconnect_0_fifoed_avalon_uart_0_s1_begintransfer       : std_logic;                     -- mm_interconnect_0:fifoed_avalon_uart_0_s1_begintransfer -> fifoed_avalon_uart_0:begintransfer
+	signal mm_interconnect_0_fifoed_avalon_uart_0_s1_write               : std_logic;                     -- mm_interconnect_0:fifoed_avalon_uart_0_s1_write -> mm_interconnect_0_fifoed_avalon_uart_0_s1_write:in
+	signal mm_interconnect_0_fifoed_avalon_uart_0_s1_writedata           : std_logic_vector(31 downto 0); -- mm_interconnect_0:fifoed_avalon_uart_0_s1_writedata -> fifoed_avalon_uart_0:writedata
 	signal irq_mapper_receiver0_irq                                      : std_logic;                     -- jtag_uart:av_irq -> irq_mapper:receiver0_irq
+	signal irq_mapper_receiver1_irq                                      : std_logic;                     -- fifoed_avalon_uart_0:irq -> irq_mapper:receiver1_irq
 	signal nios2_processor_irq_irq                                       : std_logic_vector(31 downto 0); -- irq_mapper:sender_irq -> nios2_processor:irq
 	signal rst_controller_reset_out_reset                                : std_logic;                     -- rst_controller:reset_out -> [irq_mapper:reset, mm_interconnect_0:nios2_processor_reset_reset_bridge_in_reset_reset, onchip_memory:reset, rst_controller_reset_out_reset:in, rst_translator:in_reset]
 	signal rst_controller_reset_out_reset_req                            : std_logic;                     -- rst_controller:reset_req -> [nios2_processor:reset_req, onchip_memory:reset_req, rst_translator:reset_req_in]
@@ -489,8 +526,10 @@ architecture rtl of my_nios1 is
 	signal mm_interconnect_0_sdram_s1_read_ports_inv                     : std_logic;                     -- mm_interconnect_0_sdram_s1_read:inv -> sdram:az_rd_n
 	signal mm_interconnect_0_sdram_s1_byteenable_ports_inv               : std_logic_vector(1 downto 0);  -- mm_interconnect_0_sdram_s1_byteenable:inv -> sdram:az_be_n
 	signal mm_interconnect_0_sdram_s1_write_ports_inv                    : std_logic;                     -- mm_interconnect_0_sdram_s1_write:inv -> sdram:az_wr_n
+	signal mm_interconnect_0_fifoed_avalon_uart_0_s1_read_ports_inv      : std_logic;                     -- mm_interconnect_0_fifoed_avalon_uart_0_s1_read:inv -> fifoed_avalon_uart_0:read_n
+	signal mm_interconnect_0_fifoed_avalon_uart_0_s1_write_ports_inv     : std_logic;                     -- mm_interconnect_0_fifoed_avalon_uart_0_s1_write:inv -> fifoed_avalon_uart_0:write_n
 	signal rst_controller_reset_out_reset_ports_inv                      : std_logic;                     -- rst_controller_reset_out_reset:inv -> [LEDs:reset_n, nios2_processor:reset_n, sdram:reset_n, switches:reset_n, sysid_qsys_0:reset_n]
-	signal rst_controller_002_reset_out_reset_ports_inv                  : std_logic;                     -- rst_controller_002_reset_out_reset:inv -> jtag_uart:rst_n
+	signal rst_controller_002_reset_out_reset_ports_inv                  : std_logic;                     -- rst_controller_002_reset_out_reset:inv -> [fifoed_avalon_uart_0:reset_n, jtag_uart:rst_n]
 
 begin
 
@@ -513,6 +552,24 @@ begin
 			sys_clk_clk        => clocks_sys_clk_clk,                 --      sys_clk.clk
 			sdram_clk_clk      => sdram_clk_clk,                      --    sdram_clk.clk
 			reset_source_reset => open                                -- reset_source.reset
+		);
+
+	fifoed_avalon_uart_0 : component my_nios1_fifoed_avalon_uart_0
+		port map (
+			clk           => clocks_sys_clk_clk,                                        --                 clk.clk
+			reset_n       => rst_controller_002_reset_out_reset_ports_inv,              --               reset.reset_n
+			address       => mm_interconnect_0_fifoed_avalon_uart_0_s1_address,         --                  s1.address
+			begintransfer => mm_interconnect_0_fifoed_avalon_uart_0_s1_begintransfer,   --                    .begintransfer
+			chipselect    => mm_interconnect_0_fifoed_avalon_uart_0_s1_chipselect,      --                    .chipselect
+			read_n        => mm_interconnect_0_fifoed_avalon_uart_0_s1_read_ports_inv,  --                    .read_n
+			write_n       => mm_interconnect_0_fifoed_avalon_uart_0_s1_write_ports_inv, --                    .write_n
+			writedata     => mm_interconnect_0_fifoed_avalon_uart_0_s1_writedata,       --                    .writedata
+			readdata      => mm_interconnect_0_fifoed_avalon_uart_0_s1_readdata,        --                    .readdata
+			rxd           => fifoed_avalon_uart_0_external_connection_rxd,              -- external_connection.export
+			txd           => fifoed_avalon_uart_0_external_connection_txd,              --                    .export
+			irq           => irq_mapper_receiver1_irq,                                  --                 irq.irq
+			readyfordata  => open,                                                      --         (terminated)
+			dataavailable => open                                                       --         (terminated)
 		);
 
 	jtag_uart : component my_nios1_jtag_uart
@@ -632,6 +689,13 @@ begin
 			nios2_processor_instruction_master_waitrequest    => nios2_processor_instruction_master_waitrequest,                --                                            .waitrequest
 			nios2_processor_instruction_master_read           => nios2_processor_instruction_master_read,                       --                                            .read
 			nios2_processor_instruction_master_readdata       => nios2_processor_instruction_master_readdata,                   --                                            .readdata
+			fifoed_avalon_uart_0_s1_address                   => mm_interconnect_0_fifoed_avalon_uart_0_s1_address,             --                     fifoed_avalon_uart_0_s1.address
+			fifoed_avalon_uart_0_s1_write                     => mm_interconnect_0_fifoed_avalon_uart_0_s1_write,               --                                            .write
+			fifoed_avalon_uart_0_s1_read                      => mm_interconnect_0_fifoed_avalon_uart_0_s1_read,                --                                            .read
+			fifoed_avalon_uart_0_s1_readdata                  => mm_interconnect_0_fifoed_avalon_uart_0_s1_readdata,            --                                            .readdata
+			fifoed_avalon_uart_0_s1_writedata                 => mm_interconnect_0_fifoed_avalon_uart_0_s1_writedata,           --                                            .writedata
+			fifoed_avalon_uart_0_s1_begintransfer             => mm_interconnect_0_fifoed_avalon_uart_0_s1_begintransfer,       --                                            .begintransfer
+			fifoed_avalon_uart_0_s1_chipselect                => mm_interconnect_0_fifoed_avalon_uart_0_s1_chipselect,          --                                            .chipselect
 			jtag_uart_avalon_jtag_slave_address               => mm_interconnect_0_jtag_uart_avalon_jtag_slave_address,         --                 jtag_uart_avalon_jtag_slave.address
 			jtag_uart_avalon_jtag_slave_write                 => mm_interconnect_0_jtag_uart_avalon_jtag_slave_write,           --                                            .write
 			jtag_uart_avalon_jtag_slave_read                  => mm_interconnect_0_jtag_uart_avalon_jtag_slave_read,            --                                            .read
@@ -679,6 +743,7 @@ begin
 			clk           => clocks_sys_clk_clk,             --       clk.clk
 			reset         => rst_controller_reset_out_reset, -- clk_reset.reset
 			receiver0_irq => irq_mapper_receiver0_irq,       -- receiver0.irq
+			receiver1_irq => irq_mapper_receiver1_irq,       -- receiver1.irq
 			sender_irq    => nios2_processor_irq_irq         --    sender.irq
 		);
 
@@ -890,6 +955,10 @@ begin
 	mm_interconnect_0_sdram_s1_byteenable_ports_inv <= not mm_interconnect_0_sdram_s1_byteenable;
 
 	mm_interconnect_0_sdram_s1_write_ports_inv <= not mm_interconnect_0_sdram_s1_write;
+
+	mm_interconnect_0_fifoed_avalon_uart_0_s1_read_ports_inv <= not mm_interconnect_0_fifoed_avalon_uart_0_s1_read;
+
+	mm_interconnect_0_fifoed_avalon_uart_0_s1_write_ports_inv <= not mm_interconnect_0_fifoed_avalon_uart_0_s1_write;
 
 	rst_controller_reset_out_reset_ports_inv <= not rst_controller_reset_out_reset;
 

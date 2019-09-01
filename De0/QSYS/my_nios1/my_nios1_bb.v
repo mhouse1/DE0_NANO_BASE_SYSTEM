@@ -13,7 +13,9 @@ module my_nios1 (
 	sdram_ras_n,
 	sdram_we_n,
 	sdram_clk_clk,
-	switches_export);	
+	switches_export,
+	fifoed_avalon_uart_0_external_connection_rxd,
+	fifoed_avalon_uart_0_external_connection_txd);	
 
 	input		clk_clk;
 	output	[7:0]	leds_export;
@@ -29,4 +31,6 @@ module my_nios1 (
 	output		sdram_we_n;
 	output		sdram_clk_clk;
 	input	[7:0]	switches_export;
+	input		fifoed_avalon_uart_0_external_connection_rxd;
+	output		fifoed_avalon_uart_0_external_connection_txd;
 endmodule
