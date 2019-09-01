@@ -1,0 +1,19 @@
+!SESSION 2017-10-03 13:46:31.622 -----------------------------------------------
+eclipse.buildId=4.3.2.M20140221-1700
+java.version=1.8.0_05
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=pt_BR
+Framework arguments:  -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/altera/15.0/nios2eds/bin/eclipse_nios2/plugin_customization.ini
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/altera/15.0/nios2eds/bin/eclipse_nios2/plugin_customization.ini
+
+!ENTRY org.eclipse.cdt.core 1 0 2017-10-03 13:47:16.934
+!MESSAGE Indexed 'de0_nano_nios_bsp' (78 sources, 60 headers) in 1,28 sec: 1.189 declarations; 2.482 references; 110 unresolved inclusions; 6 syntax errors; 191 unresolved names (4,95%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2017-10-03 13:47:19.298
+!MESSAGE Indexed 'de0_nano_nios' (1 sources, 0 headers) in 0,00 sec: 1 declarations; 1 references; 1 unresolved inclusions; 0 syntax errors; 0 unresolved names (0,00%)
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-10-03 13:48:35.690
+!MESSAGE Executing: [C:/altera/15.0/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-10-03 13:48:38.298
+!MESSAGE Executing: [C:/altera/15.0/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go /cygdrive/c/Users/Francisco/Desktop/DE0_nano_QSYS/De0/QSYS/software/de0_nano_nios/de0_nano_nios.elf]
