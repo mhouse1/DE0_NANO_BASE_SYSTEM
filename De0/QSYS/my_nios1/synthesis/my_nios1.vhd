@@ -146,6 +146,15 @@ architecture rtl of my_nios1 is
 		);
 	end component my_nios1_switches;
 
+	component my_nios1_sysid_qsys_0 is
+		port (
+			clock    : in  std_logic                     := 'X'; -- clk
+			reset_n  : in  std_logic                     := 'X'; -- reset_n
+			readdata : out std_logic_vector(31 downto 0);        -- readdata
+			address  : in  std_logic                     := 'X'  -- address
+		);
+	end component my_nios1_sysid_qsys_0;
+
 	component my_nios1_mm_interconnect_0 is
 		port (
 			clocks_sys_clk_clk                                : in  std_logic                     := 'X';             -- clk
@@ -200,7 +209,9 @@ architecture rtl of my_nios1 is
 			sdram_s1_waitrequest                              : in  std_logic                     := 'X';             -- waitrequest
 			sdram_s1_chipselect                               : out std_logic;                                        -- chipselect
 			switches_s1_address                               : out std_logic_vector(1 downto 0);                     -- address
-			switches_s1_readdata                              : in  std_logic_vector(31 downto 0) := (others => 'X')  -- readdata
+			switches_s1_readdata                              : in  std_logic_vector(31 downto 0) := (others => 'X'); -- readdata
+			sysid_qsys_0_control_slave_address                : out std_logic_vector(0 downto 0);                     -- address
+			sysid_qsys_0_control_slave_readdata               : in  std_logic_vector(31 downto 0) := (others => 'X')  -- readdata
 		);
 	end component my_nios1_mm_interconnect_0;
 
@@ -411,7 +422,7 @@ architecture rtl of my_nios1 is
 		);
 	end component my_nios1_rst_controller_002;
 
-	signal clocks_sys_clk_clk                                            : std_logic;                     -- clocks:sys_clk_clk -> [LEDs:clk, irq_mapper:clk, jtag_uart:clk, mm_interconnect_0:clocks_sys_clk_clk, nios2_processor:clk, onchip_memory:clk, rst_controller:clk, rst_controller_002:clk, sdram:clk, switches:clk]
+	signal clocks_sys_clk_clk                                            : std_logic;                     -- clocks:sys_clk_clk -> [LEDs:clk, irq_mapper:clk, jtag_uart:clk, mm_interconnect_0:clocks_sys_clk_clk, nios2_processor:clk, onchip_memory:clk, rst_controller:clk, rst_controller_002:clk, sdram:clk, switches:clk, sysid_qsys_0:clock]
 	signal nios2_processor_data_master_readdata                          : std_logic_vector(31 downto 0); -- mm_interconnect_0:nios2_processor_data_master_readdata -> nios2_processor:d_readdata
 	signal nios2_processor_data_master_waitrequest                       : std_logic;                     -- mm_interconnect_0:nios2_processor_data_master_waitrequest -> nios2_processor:d_waitrequest
 	signal nios2_processor_data_master_debugaccess                       : std_logic;                     -- nios2_processor:debug_mem_slave_debugaccess_to_roms -> mm_interconnect_0:nios2_processor_data_master_debugaccess
@@ -431,6 +442,8 @@ architecture rtl of my_nios1 is
 	signal mm_interconnect_0_jtag_uart_avalon_jtag_slave_read            : std_logic;                     -- mm_interconnect_0:jtag_uart_avalon_jtag_slave_read -> mm_interconnect_0_jtag_uart_avalon_jtag_slave_read:in
 	signal mm_interconnect_0_jtag_uart_avalon_jtag_slave_write           : std_logic;                     -- mm_interconnect_0:jtag_uart_avalon_jtag_slave_write -> mm_interconnect_0_jtag_uart_avalon_jtag_slave_write:in
 	signal mm_interconnect_0_jtag_uart_avalon_jtag_slave_writedata       : std_logic_vector(31 downto 0); -- mm_interconnect_0:jtag_uart_avalon_jtag_slave_writedata -> jtag_uart:av_writedata
+	signal mm_interconnect_0_sysid_qsys_0_control_slave_readdata         : std_logic_vector(31 downto 0); -- sysid_qsys_0:readdata -> mm_interconnect_0:sysid_qsys_0_control_slave_readdata
+	signal mm_interconnect_0_sysid_qsys_0_control_slave_address          : std_logic_vector(0 downto 0);  -- mm_interconnect_0:sysid_qsys_0_control_slave_address -> sysid_qsys_0:address
 	signal mm_interconnect_0_nios2_processor_debug_mem_slave_readdata    : std_logic_vector(31 downto 0); -- nios2_processor:debug_mem_slave_readdata -> mm_interconnect_0:nios2_processor_debug_mem_slave_readdata
 	signal mm_interconnect_0_nios2_processor_debug_mem_slave_waitrequest : std_logic;                     -- nios2_processor:debug_mem_slave_waitrequest -> mm_interconnect_0:nios2_processor_debug_mem_slave_waitrequest
 	signal mm_interconnect_0_nios2_processor_debug_mem_slave_debugaccess : std_logic;                     -- mm_interconnect_0:nios2_processor_debug_mem_slave_debugaccess -> nios2_processor:debug_mem_slave_debugaccess
@@ -476,7 +489,7 @@ architecture rtl of my_nios1 is
 	signal mm_interconnect_0_sdram_s1_read_ports_inv                     : std_logic;                     -- mm_interconnect_0_sdram_s1_read:inv -> sdram:az_rd_n
 	signal mm_interconnect_0_sdram_s1_byteenable_ports_inv               : std_logic_vector(1 downto 0);  -- mm_interconnect_0_sdram_s1_byteenable:inv -> sdram:az_be_n
 	signal mm_interconnect_0_sdram_s1_write_ports_inv                    : std_logic;                     -- mm_interconnect_0_sdram_s1_write:inv -> sdram:az_wr_n
-	signal rst_controller_reset_out_reset_ports_inv                      : std_logic;                     -- rst_controller_reset_out_reset:inv -> [LEDs:reset_n, nios2_processor:reset_n, sdram:reset_n, switches:reset_n]
+	signal rst_controller_reset_out_reset_ports_inv                      : std_logic;                     -- rst_controller_reset_out_reset:inv -> [LEDs:reset_n, nios2_processor:reset_n, sdram:reset_n, switches:reset_n, sysid_qsys_0:reset_n]
 	signal rst_controller_002_reset_out_reset_ports_inv                  : std_logic;                     -- rst_controller_002_reset_out_reset:inv -> jtag_uart:rst_n
 
 begin
@@ -594,6 +607,14 @@ begin
 			in_port  => switches_export                           -- external_connection.export
 		);
 
+	sysid_qsys_0 : component my_nios1_sysid_qsys_0
+		port map (
+			clock    => clocks_sys_clk_clk,                                      --           clk.clk
+			reset_n  => rst_controller_reset_out_reset_ports_inv,                --         reset.reset_n
+			readdata => mm_interconnect_0_sysid_qsys_0_control_slave_readdata,   -- control_slave.readdata
+			address  => mm_interconnect_0_sysid_qsys_0_control_slave_address(0)  --              .address
+		);
+
 	mm_interconnect_0 : component my_nios1_mm_interconnect_0
 		port map (
 			clocks_sys_clk_clk                                => clocks_sys_clk_clk,                                            --                              clocks_sys_clk.clk
@@ -648,7 +669,9 @@ begin
 			sdram_s1_waitrequest                              => mm_interconnect_0_sdram_s1_waitrequest,                        --                                            .waitrequest
 			sdram_s1_chipselect                               => mm_interconnect_0_sdram_s1_chipselect,                         --                                            .chipselect
 			switches_s1_address                               => mm_interconnect_0_switches_s1_address,                         --                                 switches_s1.address
-			switches_s1_readdata                              => mm_interconnect_0_switches_s1_readdata                         --                                            .readdata
+			switches_s1_readdata                              => mm_interconnect_0_switches_s1_readdata,                        --                                            .readdata
+			sysid_qsys_0_control_slave_address                => mm_interconnect_0_sysid_qsys_0_control_slave_address,          --                  sysid_qsys_0_control_slave.address
+			sysid_qsys_0_control_slave_readdata               => mm_interconnect_0_sysid_qsys_0_control_slave_readdata          --                                            .readdata
 		);
 
 	irq_mapper : component my_nios1_irq_mapper

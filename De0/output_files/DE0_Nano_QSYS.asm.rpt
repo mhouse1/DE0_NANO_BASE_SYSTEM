@@ -1,5 +1,5 @@
 Assembler report for DE0_Nano_QSYS
-Sat Aug 31 21:48:30 2019
+Sat Aug 31 23:49:50 2019
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -11,7 +11,7 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
   3. Assembler Settings
   4. Assembler Encrypted IP Cores Summary
   5. Assembler Generated Files
-  6. Assembler Device Options: C:/Users/Mech1/Documents/base_system/DE0_nano_QSYS/De0/output_files/DE0_Nano_QSYS.sof
+  6. Assembler Device Options: C:/Users/Mech1/Documents/DE0_BASE/DE0_NANO_BASE_SYSTEM/De0/output_files/DE0_Nano_QSYS.sof
   7. Assembler Messages
 
 
@@ -38,7 +38,7 @@ refer to the applicable agreement for further details.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Sat Aug 31 21:48:30 2019 ;
+; Assembler Status      ; Successful - Sat Aug 31 23:49:50 2019 ;
 ; Revision Name         ; DE0_Nano_QSYS                         ;
 ; Top-level Entity Name ; my_nios1                              ;
 ; Family                ; Cyclone IV E                          ;
@@ -63,23 +63,23 @@ refer to the applicable agreement for further details.
 +--------+------------------------+--------------+
 
 
-+---------------------------------------------------------------------------------------+
-; Assembler Generated Files                                                             ;
-+---------------------------------------------------------------------------------------+
-; File Name                                                                             ;
-+---------------------------------------------------------------------------------------+
-; C:/Users/Mech1/Documents/base_system/DE0_nano_QSYS/De0/output_files/DE0_Nano_QSYS.sof ;
-+---------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------+
+; Assembler Generated Files                                                                 ;
++-------------------------------------------------------------------------------------------+
+; File Name                                                                                 ;
++-------------------------------------------------------------------------------------------+
+; C:/Users/Mech1/Documents/DE0_BASE/DE0_NANO_BASE_SYSTEM/De0/output_files/DE0_Nano_QSYS.sof ;
++-------------------------------------------------------------------------------------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------+
-; Assembler Device Options: C:/Users/Mech1/Documents/base_system/DE0_nano_QSYS/De0/output_files/DE0_Nano_QSYS.sof ;
-+----------------+------------------------------------------------------------------------------------------------+
-; Option         ; Setting                                                                                        ;
-+----------------+------------------------------------------------------------------------------------------------+
-; JTAG usercode  ; 0x002CB7CD                                                                                     ;
-; Checksum       ; 0x002CB7CD                                                                                     ;
-+----------------+------------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------+
+; Assembler Device Options: C:/Users/Mech1/Documents/DE0_BASE/DE0_NANO_BASE_SYSTEM/De0/output_files/DE0_Nano_QSYS.sof ;
++----------------+----------------------------------------------------------------------------------------------------+
+; Option         ; Setting                                                                                            ;
++----------------+----------------------------------------------------------------------------------------------------+
+; JTAG usercode  ; 0x002CDF64                                                                                         ;
+; Checksum       ; 0x002CDF64                                                                                         ;
++----------------+----------------------------------------------------------------------------------------------------+
 
 
 +--------------------+
@@ -88,15 +88,15 @@ refer to the applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus Prime Assembler
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Sat Aug 31 21:48:29 2019
+    Info: Processing started: Sat Aug 31 23:49:48 2019
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off DE0_Nano_QSYS -c DE0_Nano_QSYS
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (115031): Writing out detailed assembly data for power analysis
 Info (115030): Assembler is generating device programming files
 Info: Quartus Prime Assembler was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 4709 megabytes
-    Info: Processing ended: Sat Aug 31 21:48:30 2019
-    Info: Elapsed time: 00:00:01
+    Info: Peak virtual memory: 4716 megabytes
+    Info: Processing ended: Sat Aug 31 23:49:50 2019
+    Info: Elapsed time: 00:00:02
     Info: Total CPU time (on all processors): 00:00:02
 
 

@@ -1,5 +1,5 @@
 Info: Starting: Create block symbol file (.bsf)
-Info: qsys-generate C:\Users\Mech1\Documents\base_system\DE0_nano_QSYS\De0\QSYS\my_nios1.qsys --block-symbol-file --output-directory=C:\Users\Mech1\Documents\base_system\DE0_nano_QSYS\De0\QSYS\my_nios1 --family="Cyclone IV E" --part=EP4CE22F17C6
+Info: qsys-generate C:\Users\Mech1\Documents\DE0_BASE\DE0_NANO_BASE_SYSTEM\De0\QSYS\my_nios1.qsys --block-symbol-file --output-directory=C:\Users\Mech1\Documents\DE0_BASE\DE0_NANO_BASE_SYSTEM\De0\QSYS\my_nios1 --family="Cyclone IV E" --part=EP4CE22F17C6
 Progress: Loading QSYS/my_nios1.qsys
 Progress: Reading input file
 Progress: Adding LEDs [altera_avalon_pio 18.1]
@@ -30,7 +30,7 @@ Info: qsys-generate succeeded.
 Info: Finished: Create block symbol file (.bsf)
 Info: 
 Info: Starting: Create HDL design files for synthesis
-Info: qsys-generate C:\Users\Mech1\Documents\base_system\DE0_nano_QSYS\De0\QSYS\my_nios1.qsys --synthesis=VHDL --output-directory=C:\Users\Mech1\Documents\base_system\DE0_nano_QSYS\De0\QSYS\my_nios1\synthesis --family="Cyclone IV E" --part=EP4CE22F17C6
+Info: qsys-generate C:\Users\Mech1\Documents\DE0_BASE\DE0_NANO_BASE_SYSTEM\De0\QSYS\my_nios1.qsys --synthesis=VHDL --output-directory=C:\Users\Mech1\Documents\DE0_BASE\DE0_NANO_BASE_SYSTEM\De0\QSYS\my_nios1\synthesis --family="Cyclone IV E" --part=EP4CE22F17C6
 Progress: Loading QSYS/my_nios1.qsys
 Progress: Reading input file
 Progress: Adding LEDs [altera_avalon_pio 18.1]
@@ -59,25 +59,25 @@ Info: my_nios1.sdram: SDRAM Controller will only be supported in Quartus Prime S
 Info: my_nios1.switches: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
 Info: my_nios1: Generating my_nios1 "my_nios1" for QUARTUS_SYNTH
 Info: LEDs: Starting RTL generation for module 'my_nios1_LEDs'
-Info: LEDs:   Generation command is [exec C:/intelfpga_lite/18.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/18.1/quartus/bin64/perl/lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=my_nios1_LEDs --dir=C:/Users/Mech1/AppData/Local/Temp/alt8140_2862197000040693722.dir/0002_LEDs_gen/ --quartus_dir=C:/intelfpga_lite/18.1/quartus --verilog --config=C:/Users/Mech1/AppData/Local/Temp/alt8140_2862197000040693722.dir/0002_LEDs_gen//my_nios1_LEDs_component_configuration.pl  --do_build_sim=0  ]
+Info: LEDs:   Generation command is [exec C:/intelfpga_lite/18.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/18.1/quartus/bin64/perl/lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=my_nios1_LEDs --dir=C:/Users/Mech1/AppData/Local/Temp/alt8140_2458698299842422342.dir/0034_LEDs_gen/ --quartus_dir=C:/intelfpga_lite/18.1/quartus --verilog --config=C:/Users/Mech1/AppData/Local/Temp/alt8140_2458698299842422342.dir/0034_LEDs_gen//my_nios1_LEDs_component_configuration.pl  --do_build_sim=0  ]
 Info: LEDs: Done RTL generation for module 'my_nios1_LEDs'
 Info: LEDs: "my_nios1" instantiated altera_avalon_pio "LEDs"
 Info: clocks: "my_nios1" instantiated altera_up_avalon_sys_sdram_pll "clocks"
 Info: jtag_uart: Starting RTL generation for module 'my_nios1_jtag_uart'
-Info: jtag_uart:   Generation command is [exec C:/intelfpga_lite/18.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/18.1/quartus/bin64/perl/lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart -- C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart/generate_rtl.pl --name=my_nios1_jtag_uart --dir=C:/Users/Mech1/AppData/Local/Temp/alt8140_2862197000040693722.dir/0003_jtag_uart_gen/ --quartus_dir=C:/intelfpga_lite/18.1/quartus --verilog --config=C:/Users/Mech1/AppData/Local/Temp/alt8140_2862197000040693722.dir/0003_jtag_uart_gen//my_nios1_jtag_uart_component_configuration.pl  --do_build_sim=0  ]
+Info: jtag_uart:   Generation command is [exec C:/intelfpga_lite/18.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/18.1/quartus/bin64/perl/lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart -- C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart/generate_rtl.pl --name=my_nios1_jtag_uart --dir=C:/Users/Mech1/AppData/Local/Temp/alt8140_2458698299842422342.dir/0035_jtag_uart_gen/ --quartus_dir=C:/intelfpga_lite/18.1/quartus --verilog --config=C:/Users/Mech1/AppData/Local/Temp/alt8140_2458698299842422342.dir/0035_jtag_uart_gen//my_nios1_jtag_uart_component_configuration.pl  --do_build_sim=0  ]
 Info: jtag_uart: Done RTL generation for module 'my_nios1_jtag_uart'
 Info: jtag_uart: "my_nios1" instantiated altera_avalon_jtag_uart "jtag_uart"
 Info: nios2_processor: "my_nios1" instantiated altera_nios2_gen2 "nios2_processor"
 Info: onchip_memory: Starting RTL generation for module 'my_nios1_onchip_memory'
-Info: onchip_memory:   Generation command is [exec C:/intelfpga_lite/18.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/18.1/quartus/bin64/perl/lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2 -- C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2/generate_rtl.pl --name=my_nios1_onchip_memory --dir=C:/Users/Mech1/AppData/Local/Temp/alt8140_2862197000040693722.dir/0004_onchip_memory_gen/ --quartus_dir=C:/intelfpga_lite/18.1/quartus --verilog --config=C:/Users/Mech1/AppData/Local/Temp/alt8140_2862197000040693722.dir/0004_onchip_memory_gen//my_nios1_onchip_memory_component_configuration.pl  --do_build_sim=0  ]
+Info: onchip_memory:   Generation command is [exec C:/intelfpga_lite/18.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/18.1/quartus/bin64/perl/lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2 -- C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2/generate_rtl.pl --name=my_nios1_onchip_memory --dir=C:/Users/Mech1/AppData/Local/Temp/alt8140_2458698299842422342.dir/0036_onchip_memory_gen/ --quartus_dir=C:/intelfpga_lite/18.1/quartus --verilog --config=C:/Users/Mech1/AppData/Local/Temp/alt8140_2458698299842422342.dir/0036_onchip_memory_gen//my_nios1_onchip_memory_component_configuration.pl  --do_build_sim=0  ]
 Info: onchip_memory: Done RTL generation for module 'my_nios1_onchip_memory'
 Info: onchip_memory: "my_nios1" instantiated altera_avalon_onchip_memory2 "onchip_memory"
 Info: sdram: Starting RTL generation for module 'my_nios1_sdram'
-Info: sdram:   Generation command is [exec C:/intelfpga_lite/18.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/18.1/quartus/bin64/perl/lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_new_sdram_controller -- C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_new_sdram_controller/generate_rtl.pl --name=my_nios1_sdram --dir=C:/Users/Mech1/AppData/Local/Temp/alt8140_2862197000040693722.dir/0005_sdram_gen/ --quartus_dir=C:/intelfpga_lite/18.1/quartus --verilog --config=C:/Users/Mech1/AppData/Local/Temp/alt8140_2862197000040693722.dir/0005_sdram_gen//my_nios1_sdram_component_configuration.pl  --do_build_sim=0  ]
+Info: sdram:   Generation command is [exec C:/intelfpga_lite/18.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/18.1/quartus/bin64/perl/lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_new_sdram_controller -- C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_new_sdram_controller/generate_rtl.pl --name=my_nios1_sdram --dir=C:/Users/Mech1/AppData/Local/Temp/alt8140_2458698299842422342.dir/0037_sdram_gen/ --quartus_dir=C:/intelfpga_lite/18.1/quartus --verilog --config=C:/Users/Mech1/AppData/Local/Temp/alt8140_2458698299842422342.dir/0037_sdram_gen//my_nios1_sdram_component_configuration.pl  --do_build_sim=0  ]
 Info: sdram: Done RTL generation for module 'my_nios1_sdram'
 Info: sdram: "my_nios1" instantiated altera_avalon_new_sdram_controller "sdram"
 Info: switches: Starting RTL generation for module 'my_nios1_switches'
-Info: switches:   Generation command is [exec C:/intelfpga_lite/18.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/18.1/quartus/bin64/perl/lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=my_nios1_switches --dir=C:/Users/Mech1/AppData/Local/Temp/alt8140_2862197000040693722.dir/0006_switches_gen/ --quartus_dir=C:/intelfpga_lite/18.1/quartus --verilog --config=C:/Users/Mech1/AppData/Local/Temp/alt8140_2862197000040693722.dir/0006_switches_gen//my_nios1_switches_component_configuration.pl  --do_build_sim=0  ]
+Info: switches:   Generation command is [exec C:/intelfpga_lite/18.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/18.1/quartus/bin64/perl/lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=my_nios1_switches --dir=C:/Users/Mech1/AppData/Local/Temp/alt8140_2458698299842422342.dir/0038_switches_gen/ --quartus_dir=C:/intelfpga_lite/18.1/quartus --verilog --config=C:/Users/Mech1/AppData/Local/Temp/alt8140_2458698299842422342.dir/0038_switches_gen//my_nios1_switches_component_configuration.pl  --do_build_sim=0  ]
 Info: switches: Done RTL generation for module 'my_nios1_switches'
 Info: switches: "my_nios1" instantiated altera_avalon_pio "switches"
 Info: avalon_st_adapter: Inserting error_adapter: error_adapter_0
@@ -92,19 +92,19 @@ Info: rst_controller: "my_nios1" instantiated altera_reset_controller "rst_contr
 Info: sys_pll: "clocks" instantiated altera_up_altpll "sys_pll"
 Info: reset_from_locked: "clocks" instantiated altera_up_avalon_reset_from_locked_signal "reset_from_locked"
 Info: cpu: Starting RTL generation for module 'my_nios1_nios2_processor_cpu'
-Info: cpu:   Generation command is [exec C:/intelFPGA_lite/18.1/quartus/bin64//eperlcmd.exe -I C:/intelFPGA_lite/18.1/quartus/bin64//perl/lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/18.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/cpu_lib -I C:/intelfpga_lite/18.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/nios_lib -I C:/intelfpga_lite/18.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2 -I C:/intelfpga_lite/18.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2 -- C:/intelfpga_lite/18.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/generate_rtl.epl --name=my_nios1_nios2_processor_cpu --dir=C:/Users/Mech1/AppData/Local/Temp/alt8140_2862197000040693722.dir/0011_cpu_gen/ --quartus_bindir=C:/intelFPGA_lite/18.1/quartus/bin64/ --verilog --config=C:/Users/Mech1/AppData/Local/Temp/alt8140_2862197000040693722.dir/0011_cpu_gen//my_nios1_nios2_processor_cpu_processor_configuration.pl  --do_build_sim=0  ]
-Info: cpu: # 2019.08.31 21:45:06 (*) Starting Nios II generation
-Info: cpu: # 2019.08.31 21:45:06 (*)   Checking for plaintext license.
-Info: cpu: # 2019.08.31 21:45:06 (*)   Couldn't query license setup in Quartus directory C:/intelFPGA_lite/18.1/quartus/bin64/
-Info: cpu: # 2019.08.31 21:45:06 (*)   Defaulting to contents of LM_LICENSE_FILE environment variable
-Info: cpu: # 2019.08.31 21:45:06 (*)   LM_LICENSE_FILE environment variable is empty
-Info: cpu: # 2019.08.31 21:45:06 (*)   Plaintext license not found.
-Info: cpu: # 2019.08.31 21:45:06 (*)   No license required to generate encrypted Nios II/e.
-Info: cpu: # 2019.08.31 21:45:06 (*)   Elaborating CPU configuration settings
-Info: cpu: # 2019.08.31 21:45:07 (*)   Creating all objects for CPU
-Info: cpu: # 2019.08.31 21:45:09 (*)   Generating RTL from CPU objects
-Info: cpu: # 2019.08.31 21:45:09 (*)   Creating plain-text RTL
-Info: cpu: # 2019.08.31 21:45:10 (*) Done Nios II generation
+Info: cpu:   Generation command is [exec C:/intelFPGA_lite/18.1/quartus/bin64//eperlcmd.exe -I C:/intelFPGA_lite/18.1/quartus/bin64//perl/lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/18.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/cpu_lib -I C:/intelfpga_lite/18.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/nios_lib -I C:/intelfpga_lite/18.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2 -I C:/intelfpga_lite/18.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2 -- C:/intelfpga_lite/18.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/generate_rtl.epl --name=my_nios1_nios2_processor_cpu --dir=C:/Users/Mech1/AppData/Local/Temp/alt8140_2458698299842422342.dir/0043_cpu_gen/ --quartus_bindir=C:/intelFPGA_lite/18.1/quartus/bin64/ --verilog --config=C:/Users/Mech1/AppData/Local/Temp/alt8140_2458698299842422342.dir/0043_cpu_gen//my_nios1_nios2_processor_cpu_processor_configuration.pl  --do_build_sim=0  ]
+Info: cpu: # 2019.08.31 23:28:22 (*) Starting Nios II generation
+Info: cpu: # 2019.08.31 23:28:22 (*)   Checking for plaintext license.
+Info: cpu: # 2019.08.31 23:28:22 (*)   Couldn't query license setup in Quartus directory C:/intelFPGA_lite/18.1/quartus/bin64/
+Info: cpu: # 2019.08.31 23:28:22 (*)   Defaulting to contents of LM_LICENSE_FILE environment variable
+Info: cpu: # 2019.08.31 23:28:22 (*)   LM_LICENSE_FILE environment variable is empty
+Info: cpu: # 2019.08.31 23:28:22 (*)   Plaintext license not found.
+Info: cpu: # 2019.08.31 23:28:22 (*)   No license required to generate encrypted Nios II/e.
+Info: cpu: # 2019.08.31 23:28:22 (*)   Elaborating CPU configuration settings
+Info: cpu: # 2019.08.31 23:28:22 (*)   Creating all objects for CPU
+Info: cpu: # 2019.08.31 23:28:24 (*)   Generating RTL from CPU objects
+Info: cpu: # 2019.08.31 23:28:24 (*)   Creating plain-text RTL
+Info: cpu: # 2019.08.31 23:28:25 (*) Done Nios II generation
 Info: cpu: Done RTL generation for module 'my_nios1_nios2_processor_cpu'
 Info: cpu: "nios2_processor" instantiated altera_nios2_gen2_unit "cpu"
 Info: nios2_processor_data_master_translator: "mm_interconnect_0" instantiated altera_merlin_master_translator "nios2_processor_data_master_translator"
@@ -122,16 +122,16 @@ Info: cmd_demux: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "c
 Info: cmd_demux_001: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "cmd_demux_001"
 Info: cmd_mux: "mm_interconnect_0" instantiated altera_merlin_multiplexer "cmd_mux"
 Info: cmd_mux_001: "mm_interconnect_0" instantiated altera_merlin_multiplexer "cmd_mux_001"
-Info: Reusing file C:/Users/Mech1/Documents/base_system/DE0_nano_QSYS/De0/QSYS/my_nios1/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: Reusing file C:/Users/Mech1/Documents/DE0_BASE/DE0_NANO_BASE_SYSTEM/De0/QSYS/my_nios1/synthesis/submodules/altera_merlin_arbitrator.sv
 Info: rsp_demux: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "rsp_demux"
 Info: rsp_demux_001: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "rsp_demux_001"
 Info: rsp_mux: "mm_interconnect_0" instantiated altera_merlin_multiplexer "rsp_mux"
-Info: Reusing file C:/Users/Mech1/Documents/base_system/DE0_nano_QSYS/De0/QSYS/my_nios1/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: Reusing file C:/Users/Mech1/Documents/DE0_BASE/DE0_NANO_BASE_SYSTEM/De0/QSYS/my_nios1/synthesis/submodules/altera_merlin_arbitrator.sv
 Info: rsp_mux_001: "mm_interconnect_0" instantiated altera_merlin_multiplexer "rsp_mux_001"
-Info: Reusing file C:/Users/Mech1/Documents/base_system/DE0_nano_QSYS/De0/QSYS/my_nios1/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: Reusing file C:/Users/Mech1/Documents/DE0_BASE/DE0_NANO_BASE_SYSTEM/De0/QSYS/my_nios1/synthesis/submodules/altera_merlin_arbitrator.sv
 Info: sdram_s1_rsp_width_adapter: "mm_interconnect_0" instantiated altera_merlin_width_adapter "sdram_s1_rsp_width_adapter"
-Info: Reusing file C:/Users/Mech1/Documents/base_system/DE0_nano_QSYS/De0/QSYS/my_nios1/synthesis/submodules/altera_merlin_address_alignment.sv
-Info: Reusing file C:/Users/Mech1/Documents/base_system/DE0_nano_QSYS/De0/QSYS/my_nios1/synthesis/submodules/altera_merlin_burst_uncompressor.sv
+Info: Reusing file C:/Users/Mech1/Documents/DE0_BASE/DE0_NANO_BASE_SYSTEM/De0/QSYS/my_nios1/synthesis/submodules/altera_merlin_address_alignment.sv
+Info: Reusing file C:/Users/Mech1/Documents/DE0_BASE/DE0_NANO_BASE_SYSTEM/De0/QSYS/my_nios1/synthesis/submodules/altera_merlin_burst_uncompressor.sv
 Info: avalon_st_adapter: "mm_interconnect_0" instantiated altera_avalon_st_adapter "avalon_st_adapter"
 Info: avalon_st_adapter_005: "mm_interconnect_0" instantiated altera_avalon_st_adapter "avalon_st_adapter_005"
 Info: error_adapter_0: "avalon_st_adapter" instantiated error_adapter "error_adapter_0"
