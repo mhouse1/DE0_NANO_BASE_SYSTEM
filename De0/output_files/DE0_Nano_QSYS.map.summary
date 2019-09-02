@@ -1,14 +1,14 @@
-Analysis & Synthesis Status : Successful - Sat Aug 31 23:49:37 2019
+Analysis & Synthesis Status : Successful - Mon Sep 02 05:01:20 2019
 Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 Revision Name : DE0_Nano_QSYS
-Top-level Entity Name : my_nios1
+Top-level Entity Name : top_system
 Family : Cyclone IV E
-Total logic elements : 2,656
-    Total combinational functions : 2,249
-    Dedicated logic registers : 1,485
-Total registers : 1485
-Total pins : 57
+Total logic elements : 3,029
+    Total combinational functions : 2,573
+    Dedicated logic registers : 1,698
+Total registers : 1698
+Total pins : 53
 Total virtual pins : 0
-Total memory bits : 44,032
+Total memory bits : 60,416
 Embedded Multiplier 9-bit elements : 0
 Total PLLs : 1

@@ -772,6 +772,11 @@
    kind="reset"
    version="18.1"
    start="nios2_processor.debug_reset_request"
+   end="fifoed_avalon_uart_0.reset" />
+ <connection
+   kind="reset"
+   version="18.1"
+   start="nios2_processor.debug_reset_request"
    end="onchip_memory.reset1" />
  <interconnectRequirement for="$system" name="qsys_mm.clockCrossingAdapter" value="HANDSHAKE" />
  <interconnectRequirement for="$system" name="qsys_mm.enableEccProtection" value="FALSE" />

@@ -3,7 +3,8 @@ USE ieee.std_logic_1164.all;
 USE ieee.std_logic_arith.all;
 USE ieee.std_logic_unsigned.all;
 ENTITY lights IS
-	PORT ( SW : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
+	PORT ( 
+		SW : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
 		KEY : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
 		CLOCK_50 : IN STD_LOGIC;
 		LED : OUT STD_LOGIC_VECTOR(3 DOWNTO 0);

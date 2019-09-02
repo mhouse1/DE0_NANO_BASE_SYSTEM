@@ -897,7 +897,7 @@
 												<node nodeId="1372710005727" orientation="HORIZONTAL" divider="0.6183193900785428">
 													<node nodeId="1372710005733" orientation="VERTICAL" divider="0.75">
 														<node nodeId="1507037181209" orientation="VERTICAL" divider="0.75">
-															<leaf id="4" nodeId="1507037181207">
+															<leaf id="-1" nodeId="1507037181207">
 																<placeholders>
 																	<placeholder>dock.single.Parameters</placeholder>
 																</placeholders>
@@ -1129,16 +1129,6 @@
 									</layout>
 									<children ignore="false"/>
 								</child>
-								<child>
-									<layout factory="predefined" placeholder="dock.single.Parameters">
-										<replacement id="dockablesingle Parameters"/>
-										<delegate id="delegate_ccontrol backup factory id">
-											<id>Parameters</id>
-											<area/>
-										</delegate>
-									</layout>
-									<children ignore="false"/>
-								</child>
 							</children>
 						</root>
 						<root name="ccontrol west">
@@ -1214,6 +1204,31 @@
 									<replacement id="dockablesingle Assignments"/>
 									<delegate id="delegate_ccontrol backup factory id">
 										<id>Assignments</id>
+										<area/>
+									</delegate>
+								</layout>
+								<children ignore="false"/>
+							</layout>
+						</child>
+						<child key="single Parameters" root="ccontrol center" location="true">
+							<location>
+								<property factory="SplitDockPlaceholderProperty">
+									<placeholder>dock.single.Parameters</placeholder>
+									<backup-path>
+										<node location="RIGHT" size="0.7781885397412199" id="1372710005721"/>
+										<node location="TOP" size="0.75" id="1372710005725"/>
+										<node location="LEFT" size="0.6183193900785428" id="1372710005727"/>
+										<node location="TOP" size="0.75" id="1372710005733"/>
+										<node location="TOP" size="0.75" id="1507037181209"/>
+										<leaf id="1507037181207"/>
+									</backup-path>
+								</property>
+							</location>
+							<layout>
+								<layout factory="predefined" placeholder="dock.single.Parameters">
+									<replacement id="dockablesingle Parameters"/>
+									<delegate id="delegate_ccontrol backup factory id">
+										<id>Parameters</id>
 										<area/>
 									</delegate>
 								</layout>
@@ -1549,7 +1564,7 @@
 								</property>
 							</properties>
 						</entry>
-						<entry id="single Parameters" current="dock.mode.normal">
+						<entry id="single Parameters">
 							<history>
 								<mode>dock.mode.minimized</mode>
 								<mode>dock.mode.externalized</mode>

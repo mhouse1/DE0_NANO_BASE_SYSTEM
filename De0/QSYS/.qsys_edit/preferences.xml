@@ -9,7 +9,7 @@
   </columns>
  </systemtable>
  <library
-   expandedCategories="Library,Library/Interface Protocols,Project,Library/Interface Protocols/Serial" />
+   expandedCategories="Project,Library,Library/Interface Protocols,Library/Interface Protocols/Serial" />
  <window width="1928" height="1028" x="-4" y="-4" />
  <generation synthesis="VHDL" />
 </preferences>

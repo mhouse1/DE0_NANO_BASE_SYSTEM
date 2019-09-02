@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <EnsembleReport name="my_nios1" kind="my_nios1" version="1.0" fabric="QSYS">
  <!-- Format version 18.1 625 (Future versions may contain additional information.) -->
- <!-- 2019.09.01.01:12:27 -->
+ <!-- 2019.09.01.15:02:09 -->
  <!-- A collection of modules and connections -->
  <parameter name="AUTO_GENERATION_ID">
   <type>java.lang.Integer</type>
-  <value>1567318347</value>
+  <value>1567368129</value>
   <derived>false</derived>
   <enabled>true</enabled>
   <visible>false</visible>
@@ -9322,7 +9322,7 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.TIMESTAMP</name>
-   <value>1567318347</value>
+   <value>1567368129</value>
   </assignment>
   <assignment>
    <name>embeddedsw.dts.compatible</name>
@@ -9342,7 +9342,7 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>embeddedsw.dts.params.timestamp</name>
-   <value>1567318347</value>
+   <value>1567368129</value>
   </assignment>
   <assignment>
    <name>embeddedsw.dts.vendor</name>
@@ -9358,7 +9358,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="timestamp">
    <type>int</type>
-   <value>1567318347</value>
+   <value>1567368129</value>
    <derived>true</derived>
    <enabled>false</enabled>
    <visible>false</visible>
@@ -11095,6 +11095,33 @@ parameters are a RESULT of the module parameters. -->
   <endConnectionPoint>reset</endConnectionPoint>
  </connection>
  <connection
+   name="nios2_processor.debug_reset_request/fifoed_avalon_uart_0.reset"
+   kind="reset"
+   version="18.1"
+   start="nios2_processor.debug_reset_request"
+   end="fifoed_avalon_uart_0.reset">
+  <parameter name="deviceFamily">
+   <type>java.lang.String</type>
+   <value>UNKNOWN</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="generateLegacySim">
+   <type>boolean</type>
+   <value>false</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <startModule>nios2_processor</startModule>
+  <startConnectionPoint>debug_reset_request</startConnectionPoint>
+  <endModule>fifoed_avalon_uart_0</endModule>
+  <endConnectionPoint>reset</endConnectionPoint>
+ </connection>
+ <connection
    name="nios2_processor.debug_reset_request/onchip_memory.reset1"
    kind="reset"
    version="18.1"
@@ -11330,7 +11357,7 @@ parameters are a RESULT of the module parameters. -->
   <version>18.1</version>
  </plugin>
  <plugin>
-  <instanceCount>16</instanceCount>
+  <instanceCount>17</instanceCount>
   <name>reset</name>
   <type>com.altera.entityinterfaces.IElementClass</type>
   <subtype>com.altera.entityinterfaces.IConnection</subtype>

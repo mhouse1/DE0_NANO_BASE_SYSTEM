@@ -528,8 +528,8 @@ architecture rtl of my_nios1 is
 	signal mm_interconnect_0_sdram_s1_write_ports_inv                    : std_logic;                     -- mm_interconnect_0_sdram_s1_write:inv -> sdram:az_wr_n
 	signal mm_interconnect_0_fifoed_avalon_uart_0_s1_read_ports_inv      : std_logic;                     -- mm_interconnect_0_fifoed_avalon_uart_0_s1_read:inv -> fifoed_avalon_uart_0:read_n
 	signal mm_interconnect_0_fifoed_avalon_uart_0_s1_write_ports_inv     : std_logic;                     -- mm_interconnect_0_fifoed_avalon_uart_0_s1_write:inv -> fifoed_avalon_uart_0:write_n
-	signal rst_controller_reset_out_reset_ports_inv                      : std_logic;                     -- rst_controller_reset_out_reset:inv -> [LEDs:reset_n, nios2_processor:reset_n, sdram:reset_n, switches:reset_n, sysid_qsys_0:reset_n]
-	signal rst_controller_002_reset_out_reset_ports_inv                  : std_logic;                     -- rst_controller_002_reset_out_reset:inv -> [fifoed_avalon_uart_0:reset_n, jtag_uart:rst_n]
+	signal rst_controller_reset_out_reset_ports_inv                      : std_logic;                     -- rst_controller_reset_out_reset:inv -> [LEDs:reset_n, fifoed_avalon_uart_0:reset_n, nios2_processor:reset_n, sdram:reset_n, switches:reset_n, sysid_qsys_0:reset_n]
+	signal rst_controller_002_reset_out_reset_ports_inv                  : std_logic;                     -- rst_controller_002_reset_out_reset:inv -> jtag_uart:rst_n
 
 begin
 
@@ -557,7 +557,7 @@ begin
 	fifoed_avalon_uart_0 : component my_nios1_fifoed_avalon_uart_0
 		port map (
 			clk           => clocks_sys_clk_clk,                                        --                 clk.clk
-			reset_n       => rst_controller_002_reset_out_reset_ports_inv,              --               reset.reset_n
+			reset_n       => rst_controller_reset_out_reset_ports_inv,                  --               reset.reset_n
 			address       => mm_interconnect_0_fifoed_avalon_uart_0_s1_address,         --                  s1.address
 			begintransfer => mm_interconnect_0_fifoed_avalon_uart_0_s1_begintransfer,   --                    .begintransfer
 			chipselect    => mm_interconnect_0_fifoed_avalon_uart_0_s1_chipselect,      --                    .chipselect
