@@ -15,7 +15,7 @@
 
 int main()
 {
-  printf("starting!\n");
+  printf("starting! 9/2/2019\n");
 
   int dip_switch_value;
 

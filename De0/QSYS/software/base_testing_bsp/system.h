@@ -4,7 +4,7 @@
  * Machine generated for CPU 'nios2_processor' in SOPC Builder design 'my_nios1'
  * SOPC Builder design path: ../../my_nios1.sopcinfo
  *
- * Generated: Mon Sep 02 14:55:45 CDT 2019
+ * Generated: Mon Sep 02 17:31:50 CDT 2019
  */
 
 /*
@@ -213,7 +213,7 @@
 #define ALT_MODULE_CLASS_fifoed_avalon_uart_0 fifoed_avalon_uart
 #define FIFOED_AVALON_UART_0_ADD_ERROR_BITS 0
 #define FIFOED_AVALON_UART_0_BASE 0x2000
-#define FIFOED_AVALON_UART_0_BAUD 9600
+#define FIFOED_AVALON_UART_0_BAUD 115200
 #define FIFOED_AVALON_UART_0_DATA_BITS 8
 #define FIFOED_AVALON_UART_0_FIFO_EXPORT_USED 0
 #define FIFOED_AVALON_UART_0_FIXED_BAUD 1
@@ -387,7 +387,7 @@
 #define SYSID_QSYS_0_IRQ_INTERRUPT_CONTROLLER_ID -1
 #define SYSID_QSYS_0_NAME "/dev/sysid_qsys_0"
 #define SYSID_QSYS_0_SPAN 8
-#define SYSID_QSYS_0_TIMESTAMP 1567453968
+#define SYSID_QSYS_0_TIMESTAMP 1567368129
 #define SYSID_QSYS_0_TYPE "altera_avalon_sysid_qsys"
 
 #endif /* __SYSTEM_H_ */
