@@ -21,7 +21,7 @@
    {
       datum baseAddress
       {
-         value = "8192";
+         value = "8256";
          type = "String";
       }
    }
@@ -41,6 +41,22 @@
          type = "int";
       }
    }
+   element fifoed_avalon_uart_0
+   {
+      datum _sortIndex
+      {
+         value = "9";
+         type = "int";
+      }
+   }
+   element fifoed_avalon_uart_0.s1
+   {
+      datum baseAddress
+      {
+         value = "8192";
+         type = "String";
+      }
+   }
    element jtag_uart
    {
       datum _sortIndex
@@ -53,7 +69,7 @@
    {
       datum baseAddress
       {
-         value = "8232";
+         value = "8296";
          type = "String";
       }
    }
@@ -122,7 +138,7 @@
    {
       datum baseAddress
       {
-         value = "8208";
+         value = "8272";
          type = "String";
       }
    }
@@ -138,7 +154,7 @@
    {
       datum baseAddress
       {
-         value = "8224";
+         value = "8288";
          type = "String";
       }
    }
@@ -164,6 +180,11 @@
  <parameter name="useTestBenchNamingPattern" value="false" />
  <instanceScript></instanceScript>
  <interface name="clk" internal="clk_0.clk_in" type="clock" dir="end" />
+ <interface
+   name="fifoed_avalon_uart_0_external_connection"
+   internal="fifoed_avalon_uart_0.external_connection"
+   type="conduit"
+   dir="end" />
  <interface
    name="leds"
    internal="LEDs.external_connection"
@@ -214,6 +235,48 @@
   <parameter name="other_boards" value="None" />
  </module>
  <module
+   name="fifoed_avalon_uart_0"
+   kind="fifoed_avalon_uart"
+   version="13.1"
+   enabled="1">
+  <parameter name="add_error_bits" value="false" />
+  <parameter name="baud" value="115200" />
+  <parameter name="clockRate" value="50000000" />
+  <parameter name="dataBits" value="8" />
+  <parameter name="driver_pass_error_bits" value="false" />
+  <parameter name="export_handshake" value="false" />
+  <parameter name="fifo_export_used" value="false" />
+  <parameter name="fifo_size_rx" value="1024" />
+  <parameter name="fifo_size_tx" value="1024" />
+  <parameter name="fixedBaud" value="true" />
+  <parameter name="gap_value" value="4" />
+  <parameter name="hw_cts" value="false" />
+  <parameter name="parity" value="NONE" />
+  <parameter name="rx_IRQ_Threshold" value="1" />
+  <parameter name="rx_fifo_LE" value="false" />
+  <parameter name="simCharStream" value="" />
+  <parameter name="simInteractiveInputEnable" value="false" />
+  <parameter name="simInteractiveOutputEnable" value="false" />
+  <parameter name="simTrueBaud" value="false" />
+  <parameter name="stopBits" value="1" />
+  <parameter name="syncRegDepth" value="2" />
+  <parameter name="timeout_value" value="4" />
+  <parameter name="timestamp_width" value="8" />
+  <parameter name="trans_pin" value="false" />
+  <parameter name="tx_IRQ_Threshold" value="1" />
+  <parameter name="tx_fifo_LE" value="false" />
+  <parameter name="useCtsRts" value="false" />
+  <parameter name="useEopRegister" value="false" />
+  <parameter name="useRelativePathForSimFile" value="false" />
+  <parameter name="use_ext_timestamp" value="false" />
+  <parameter name="use_gap_detection" value="false" />
+  <parameter name="use_rx_fifo" value="true" />
+  <parameter name="use_status_bit_clear" value="false" />
+  <parameter name="use_timestamp" value="false" />
+  <parameter name="use_timout" value="false" />
+  <parameter name="use_tx_fifo" value="true" />
+ </module>
+ <module
    name="jtag_uart"
    kind="altera_avalon_jtag_uart"
    version="18.1"
@@ -256,7 +319,7 @@
   <parameter name="dataAddrWidth" value="27" />
   <parameter name="dataMasterHighPerformanceAddrWidth" value="1" />
   <parameter name="dataMasterHighPerformanceMapParam" value="" />
-  <parameter name="dataSlaveMapParam"><![CDATA[<address-map><slave name='onchip_memory.s1' start='0x0' end='0x1000' type='altera_avalon_onchip_memory2.s1' /><slave name='nios2_processor.debug_mem_slave' start='0x1800' end='0x2000' type='altera_nios2_gen2.debug_mem_slave' /><slave name='LEDs.s1' start='0x2000' end='0x2010' type='altera_avalon_pio.s1' /><slave name='switches.s1' start='0x2010' end='0x2020' type='altera_avalon_pio.s1' /><slave name='sysid_qsys_0.control_slave' start='0x2020' end='0x2028' type='altera_avalon_sysid_qsys.control_slave' /><slave name='jtag_uart.avalon_jtag_slave' start='0x2028' end='0x2030' type='altera_avalon_jtag_uart.avalon_jtag_slave' /><slave name='sdram.s1' start='0x4000000' end='0x6000000' type='altera_avalon_new_sdram_controller.s1' /></address-map>]]></parameter>
+  <parameter name="dataSlaveMapParam"><![CDATA[<address-map><slave name='onchip_memory.s1' start='0x0' end='0x1000' type='altera_avalon_onchip_memory2.s1' /><slave name='nios2_processor.debug_mem_slave' start='0x1800' end='0x2000' type='altera_nios2_gen2.debug_mem_slave' /><slave name='fifoed_avalon_uart_0.s1' start='0x2000' end='0x2040' type='fifoed_avalon_uart.s1' /><slave name='LEDs.s1' start='0x2040' end='0x2050' type='altera_avalon_pio.s1' /><slave name='switches.s1' start='0x2050' end='0x2060' type='altera_avalon_pio.s1' /><slave name='sysid_qsys_0.control_slave' start='0x2060' end='0x2068' type='altera_avalon_sysid_qsys.control_slave' /><slave name='jtag_uart.avalon_jtag_slave' start='0x2068' end='0x2070' type='altera_avalon_jtag_uart.avalon_jtag_slave' /><slave name='sdram.s1' start='0x4000000' end='0x6000000' type='altera_avalon_new_sdram_controller.s1' /></address-map>]]></parameter>
   <parameter name="data_master_high_performance_paddr_base" value="0" />
   <parameter name="data_master_high_performance_paddr_size" value="0" />
   <parameter name="data_master_paddr_base" value="0" />
@@ -302,7 +365,7 @@
   <parameter name="instruction_master_high_performance_paddr_size" value="0" />
   <parameter name="instruction_master_paddr_base" value="0" />
   <parameter name="instruction_master_paddr_size" value="0" />
-  <parameter name="internalIrqMaskSystemInfo" value="1" />
+  <parameter name="internalIrqMaskSystemInfo" value="3" />
   <parameter name="io_regionbase" value="0" />
   <parameter name="io_regionsize" value="0" />
   <parameter name="master_addr_map" value="false" />
@@ -502,7 +565,7 @@
    start="nios2_processor.data_master"
    end="jtag_uart.avalon_jtag_slave">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x2028" />
+  <parameter name="baseAddress" value="0x2068" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -511,7 +574,7 @@
    start="nios2_processor.data_master"
    end="sysid_qsys_0.control_slave">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x2020" />
+  <parameter name="baseAddress" value="0x2060" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -538,7 +601,7 @@
    start="nios2_processor.data_master"
    end="switches.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x2010" />
+  <parameter name="baseAddress" value="0x2050" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -547,7 +610,7 @@
    start="nios2_processor.data_master"
    end="LEDs.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x2000" />
+  <parameter name="baseAddress" value="0x2040" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -557,6 +620,15 @@
    end="sdram.s1">
   <parameter name="arbitrationPriority" value="1" />
   <parameter name="baseAddress" value="0x04000000" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="18.1"
+   start="nios2_processor.data_master"
+   end="fifoed_avalon_uart_0.s1">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x2000" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -609,6 +681,11 @@
    kind="clock"
    version="18.1"
    start="clocks.sys_clk"
+   end="fifoed_avalon_uart_0.clk" />
+ <connection
+   kind="clock"
+   version="18.1"
+   start="clocks.sys_clk"
    end="onchip_memory.clk1" />
  <connection
    kind="interrupt"
@@ -616,6 +693,13 @@
    start="nios2_processor.irq"
    end="jtag_uart.irq">
   <parameter name="irqNumber" value="0" />
+ </connection>
+ <connection
+   kind="interrupt"
+   version="18.1"
+   start="nios2_processor.irq"
+   end="fifoed_avalon_uart_0.irq">
+  <parameter name="irqNumber" value="1" />
  </connection>
  <connection
    kind="reset"
@@ -644,6 +728,11 @@
    version="18.1"
    start="clk_0.clk_reset"
    end="sysid_qsys_0.reset" />
+ <connection
+   kind="reset"
+   version="18.1"
+   start="clk_0.clk_reset"
+   end="fifoed_avalon_uart_0.reset" />
  <connection
    kind="reset"
    version="18.1"
@@ -679,6 +768,11 @@
    version="18.1"
    start="nios2_processor.debug_reset_request"
    end="sysid_qsys_0.reset" />
+ <connection
+   kind="reset"
+   version="18.1"
+   start="nios2_processor.debug_reset_request"
+   end="fifoed_avalon_uart_0.reset" />
  <connection
    kind="reset"
    version="18.1"
