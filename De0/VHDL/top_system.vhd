@@ -20,6 +20,11 @@ USE ieee.std_logic_unsigned.all;
 entity top_system is
   port ( 
 
+        -- UART
+        --
+        TxD : out std_logic;
+        RxD : in std_logic;
+		  
   		SW : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
 		KEY : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
 		CLOCK_50 : IN STD_LOGIC;
@@ -30,6 +35,9 @@ entity top_system is
 		DRAM_CS_N, DRAM_CAS_N, DRAM_RAS_N, DRAM_WE_N : OUT STD_LOGIC;
 		DRAM_DQ : INOUT STD_LOGIC_VECTOR(15 DOWNTO 0);
 		DRAM_DQM : OUT STD_LOGIC_VECTOR(1 DOWNTO 0));
+		
+
+		  
 --         --
 --         -- Input clock 
 --         --
@@ -100,10 +108,7 @@ entity top_system is
 --          PWM_STEERING : out std_logic;
 --          PWM_ROUTER : out std_logic;
 --          --
---        -- UART
---        --
---        TxD : out std_logic;
---        RxD : in std_logic;
+
 --        -- Spektrum receiver
 --        RECEIVER_CHANNEL : in std_logic_vector(5 downto 0);
 --        
@@ -431,6 +436,8 @@ begin
 				clk_clk => CLOCK_50,
 				reset_reset_n => KEY(0),
 				sdram_clk_clk => DRAM_CLK,
+		fifoed_avalon_uart_0_external_connection_rxd  => RxD,
+		fifoed_avalon_uart_0_external_connection_txd => TxD,
 				leds_export => open, --LED,
 				switches_export(3 DOWNTO 0) => SW(3 downto 0),
 				sdram_addr => DRAM_ADDR,
