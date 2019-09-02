@@ -150,7 +150,7 @@ architecture components_interconnections of top_system is
 		sdram_ras_n                                  : out   std_logic;                                        --                                         .ras_n
 		sdram_we_n                                   : out   std_logic;                                        --                                         .we_n
 		sdram_clk_clk                                : out   std_logic;                                        --                                sdram_clk.clk
-		switches_export                              : in    std_logic_vector(7 downto 0)  --                                 switches.export
+		switches_export                              : in    std_logic_vector(7 downto 0) := (others => '0')   --                                 switches.export
 	);
 	END COMPONENT my_nios1;
 	
@@ -434,7 +434,8 @@ begin
 		NiosII: component my_nios1
 			PORT MAP (
 				clk_clk => CLOCK_50,
-				reset_reset_n => KEY(0),
+--				reset_reset_n => KEY(0),
+				reset_reset_n => '1', -- reset.reset_n
 				sdram_clk_clk => DRAM_CLK,
 		fifoed_avalon_uart_0_external_connection_rxd  => RxD,
 		fifoed_avalon_uart_0_external_connection_txd => TxD,

@@ -1,5 +1,5 @@
 Flow report for DE0_Nano_QSYS
-Mon Sep 02 05:32:59 2019
+Mon Sep 02 09:41:57 2019
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -40,15 +40,15 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Mon Sep 02 05:32:59 2019       ;
+; Flow Status                        ; Successful - Mon Sep 02 09:41:57 2019       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; DE0_Nano_QSYS                               ;
 ; Top-level Entity Name              ; top_system                                  ;
 ; Family                             ; Cyclone IV E                                ;
 ; Device                             ; EP4CE22F17C6                                ;
 ; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 2,836 / 22,320 ( 13 % )                     ;
-;     Total combinational functions  ; 2,582 / 22,320 ( 12 % )                     ;
+; Total logic elements               ; 2,841 / 22,320 ( 13 % )                     ;
+;     Total combinational functions  ; 2,584 / 22,320 ( 12 % )                     ;
 ;     Dedicated logic registers      ; 1,649 / 22,320 ( 7 % )                      ;
 ; Total registers                    ; 1718                                        ;
 ; Total pins                         ; 55 / 154 ( 36 % )                           ;
@@ -64,7 +64,7 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 09/02/2019 05:32:00 ;
+; Start date & time ; 09/02/2019 09:40:55 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; DE0_Nano_QSYS       ;
 +-------------------+---------------------+
@@ -75,7 +75,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------+------------------------------------------------------------+---------------+-------------+----------------+
 ; Assignment Name                     ; Value                                                      ; Default Value ; Entity Name ; Section Id     ;
 +-------------------------------------+------------------------------------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 242971818137559.156742031919516                            ; --            ; --          ; --             ;
+; COMPILER_SIGNATURE_ID               ; 242971818137559.156743525405236                            ; --            ; --          ; --             ;
 ; EDA_OUTPUT_DATA_FORMAT              ; Vhdl                                                       ; --            ; --          ; eda_simulation ;
 ; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (VHDL)                                     ; <None>        ; --          ; --             ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                                                         ; --            ; --          ; --             ;
@@ -103,12 +103,12 @@ refer to the applicable agreement for further details.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:34     ; 1.0                     ; 4956 MB             ; 00:00:52                           ;
-; Fitter               ; 00:00:10     ; 1.1                     ; 5730 MB             ; 00:00:13                           ;
-; Assembler            ; 00:00:01     ; 1.0                     ; 4715 MB             ; 00:00:02                           ;
-; Timing Analyzer      ; 00:00:03     ; 1.2                     ; 4865 MB             ; 00:00:03                           ;
-; EDA Netlist Writer   ; 00:00:05     ; 1.0                     ; 4708 MB             ; 00:00:04                           ;
-; Total                ; 00:00:53     ; --                      ; --                  ; 00:01:14                           ;
+; Analysis & Synthesis ; 00:00:35     ; 1.0                     ; 4952 MB             ; 00:00:53                           ;
+; Fitter               ; 00:00:09     ; 1.1                     ; 5729 MB             ; 00:00:13                           ;
+; Assembler            ; 00:00:02     ; 1.0                     ; 4714 MB             ; 00:00:02                           ;
+; Timing Analyzer      ; 00:00:03     ; 1.2                     ; 4864 MB             ; 00:00:04                           ;
+; EDA Netlist Writer   ; 00:00:05     ; 1.0                     ; 4708 MB             ; 00:00:05                           ;
+; Total                ; 00:00:54     ; --                      ; --                  ; 00:01:17                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
