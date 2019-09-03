@@ -11,6 +11,8 @@ Tested working with Quartus 18 running on windows 10
 * Nios II/e processor
 * onchip memory
 * PIO for LEDs and switches
+* DIP Switch
+* serial send and receive via FIFOed UART
 
 
 # adding to the base system
