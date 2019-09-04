@@ -6,10 +6,10 @@
    <connections preferredWidth="191" />
    <irq preferredWidth="34" />
    <inputclock preferredWidth="176" />
+   <name preferredWidth="212" />
   </columns>
  </systemtable>
- <library
-   expandedCategories="Project,Library,Library/Interface Protocols,Library/Interface Protocols/Serial" />
- <window width="1928" height="1028" x="-4" y="-4" />
+ <library expandedCategories="Library,Project,Library/Templates" />
+ <window width="1484" height="939" x="0" y="0" />
  <generation synthesis="VHDL" />
 </preferences>

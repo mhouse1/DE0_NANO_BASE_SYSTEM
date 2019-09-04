@@ -1,6 +1,6 @@
 <sld_project_info>
   <project>
-    <hash md5_digest_80b="a8c301bd0adef9b1e026"/>
+    <hash md5_digest_80b="5be4177cf0a47bb73c6d"/>
   </project>
   <file_info>
     <file device="EP4CE22F17C6" path="DE0_Nano_QSYS.sof" usercode="0xFFFFFFFF"/>
@@ -139,7 +139,7 @@
   <sld_infos>
     <sld_info hpath="my_nios1:NiosII" name="NiosII">
       <assignment_values>
-        <assignment_value text="QSYS_NAME my_nios1 HAS_SOPCINFO 1 GENERATION_ID 1567368129"/>
+        <assignment_value text="QSYS_NAME my_nios1 HAS_SOPCINFO 1 GENERATION_ID 1567567133"/>
       </assignment_values>
       <parameters/>
     </sld_info>

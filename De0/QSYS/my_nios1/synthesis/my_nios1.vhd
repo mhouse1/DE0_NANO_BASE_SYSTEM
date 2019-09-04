@@ -12,6 +12,54 @@ entity my_nios1 is
 		fifoed_avalon_uart_0_external_connection_rxd : in    std_logic                     := '0';             -- fifoed_avalon_uart_0_external_connection.rxd
 		fifoed_avalon_uart_0_external_connection_txd : out   std_logic;                                        --                                         .txd
 		leds_export                                  : out   std_logic_vector(7 downto 0);                     --                                     leds.export
+		mm_read_only_0                               : in    std_logic_vector(31 downto 0) := (others => '0'); --                             mm_read_only.0
+		mm_read_only_1                               : in    std_logic_vector(31 downto 0) := (others => '0'); --                                         .1
+		mm_read_only_2                               : in    std_logic_vector(31 downto 0) := (others => '0'); --                                         .2
+		mm_read_only_3                               : in    std_logic_vector(31 downto 0) := (others => '0'); --                                         .3
+		mm_read_only_4                               : in    std_logic_vector(31 downto 0) := (others => '0'); --                                         .4
+		mm_read_only_5                               : in    std_logic_vector(31 downto 0) := (others => '0'); --                                         .5
+		mm_read_only_6                               : in    std_logic_vector(31 downto 0) := (others => '0'); --                                         .6
+		mm_read_only_7                               : in    std_logic_vector(31 downto 0) := (others => '0'); --                                         .7
+		mm_read_only_8                               : in    std_logic_vector(31 downto 0) := (others => '0'); --                                         .8
+		mm_read_only_9                               : in    std_logic_vector(31 downto 0) := (others => '0'); --                                         .9
+		mm_read_only_10                              : in    std_logic_vector(31 downto 0) := (others => '0'); --                                         .10
+		mm_read_only_11                              : in    std_logic_vector(31 downto 0) := (others => '0'); --                                         .11
+		mm_read_only_12                              : in    std_logic_vector(31 downto 0) := (others => '0'); --                                         .12
+		mm_read_only_13                              : in    std_logic_vector(31 downto 0) := (others => '0'); --                                         .13
+		mm_read_only_14                              : in    std_logic_vector(31 downto 0) := (others => '0'); --                                         .14
+		mm_read_only_15                              : in    std_logic_vector(31 downto 0) := (others => '0'); --                                         .15
+		mm_read_write_dataout_0                      : out   std_logic_vector(31 downto 0);                    --                            mm_read_write.dataout_0
+		mm_read_write_dataout_1                      : out   std_logic_vector(31 downto 0);                    --                                         .dataout_1
+		mm_read_write_dataout_2                      : out   std_logic_vector(31 downto 0);                    --                                         .dataout_2
+		mm_read_write_dataout_3                      : out   std_logic_vector(31 downto 0);                    --                                         .dataout_3
+		mm_read_write_dataout_4                      : out   std_logic_vector(31 downto 0);                    --                                         .dataout_4
+		mm_read_write_dataout_5                      : out   std_logic_vector(31 downto 0);                    --                                         .dataout_5
+		mm_read_write_dataout_6                      : out   std_logic_vector(31 downto 0);                    --                                         .dataout_6
+		mm_read_write_dataout_7                      : out   std_logic_vector(31 downto 0);                    --                                         .dataout_7
+		mm_read_write_dataout_8                      : out   std_logic_vector(31 downto 0);                    --                                         .dataout_8
+		mm_read_write_dataout_9                      : out   std_logic_vector(31 downto 0);                    --                                         .dataout_9
+		mm_read_write_dataout_10                     : out   std_logic_vector(31 downto 0);                    --                                         .dataout_10
+		mm_read_write_dataout_11                     : out   std_logic_vector(31 downto 0);                    --                                         .dataout_11
+		mm_read_write_dataout_12                     : out   std_logic_vector(31 downto 0);                    --                                         .dataout_12
+		mm_read_write_dataout_13                     : out   std_logic_vector(31 downto 0);                    --                                         .dataout_13
+		mm_read_write_dataout_14                     : out   std_logic_vector(31 downto 0);                    --                                         .dataout_14
+		mm_read_write_dataout_15                     : out   std_logic_vector(31 downto 0);                    --                                         .dataout_15
+		mm_read_write_datain_0                       : in    std_logic_vector(31 downto 0) := (others => '0'); --                                         .datain_0
+		mm_read_write_datain_1                       : in    std_logic_vector(31 downto 0) := (others => '0'); --                                         .datain_1
+		mm_read_write_datain_2                       : in    std_logic_vector(31 downto 0) := (others => '0'); --                                         .datain_2
+		mm_read_write_datain_3                       : in    std_logic_vector(31 downto 0) := (others => '0'); --                                         .datain_3
+		mm_read_write_datain_4                       : in    std_logic_vector(31 downto 0) := (others => '0'); --                                         .datain_4
+		mm_read_write_datain_5                       : in    std_logic_vector(31 downto 0) := (others => '0'); --                                         .datain_5
+		mm_read_write_datain_6                       : in    std_logic_vector(31 downto 0) := (others => '0'); --                                         .datain_6
+		mm_read_write_datain_7                       : in    std_logic_vector(31 downto 0) := (others => '0'); --                                         .datain_7
+		mm_read_write_datain_8                       : in    std_logic_vector(31 downto 0) := (others => '0'); --                                         .datain_8
+		mm_read_write_datain_9                       : in    std_logic_vector(31 downto 0) := (others => '0'); --                                         .datain_9
+		mm_read_write_datain_10                      : in    std_logic_vector(31 downto 0) := (others => '0'); --                                         .datain_10
+		mm_read_write_datain_11                      : in    std_logic_vector(31 downto 0) := (others => '0'); --                                         .datain_11
+		mm_read_write_datain_12                      : in    std_logic_vector(31 downto 0) := (others => '0'); --                                         .datain_12
+		mm_read_write_datain_13                      : in    std_logic_vector(31 downto 0) := (others => '0'); --                                         .datain_13
+		mm_read_write_datain_14                      : in    std_logic_vector(31 downto 0) := (others => '0'); --                                         .datain_14
+		mm_read_write_datain_15                      : in    std_logic_vector(31 downto 0) := (others => '0'); --                                         .datain_15
 		reset_reset_n                                : in    std_logic                     := '0';             --                                    reset.reset_n
 		sdram_addr                                   : out   std_logic_vector(12 downto 0);                    --                                    sdram.addr
 		sdram_ba                                     : out   std_logic_vector(1 downto 0);                     --                                         .ba
@@ -236,6 +284,18 @@ architecture rtl of my_nios1 is
 			sdram_s1_readdatavalid                            : in  std_logic                     := 'X';             -- readdatavalid
 			sdram_s1_waitrequest                              : in  std_logic                     := 'X';             -- waitrequest
 			sdram_s1_chipselect                               : out std_logic;                                        -- chipselect
+			slave_template_0_s0_address                       : out std_logic_vector(8 downto 0);                     -- address
+			slave_template_0_s0_write                         : out std_logic;                                        -- write
+			slave_template_0_s0_read                          : out std_logic;                                        -- read
+			slave_template_0_s0_readdata                      : in  std_logic_vector(31 downto 0) := (others => 'X'); -- readdata
+			slave_template_0_s0_writedata                     : out std_logic_vector(31 downto 0);                    -- writedata
+			slave_template_0_s0_byteenable                    : out std_logic_vector(3 downto 0);                     -- byteenable
+			slave_template_1_s0_address                       : out std_logic_vector(8 downto 0);                     -- address
+			slave_template_1_s0_write                         : out std_logic;                                        -- write
+			slave_template_1_s0_read                          : out std_logic;                                        -- read
+			slave_template_1_s0_readdata                      : in  std_logic_vector(31 downto 0) := (others => 'X'); -- readdata
+			slave_template_1_s0_writedata                     : out std_logic_vector(31 downto 0);                    -- writedata
+			slave_template_1_s0_byteenable                    : out std_logic_vector(3 downto 0);                     -- byteenable
 			switches_s1_address                               : out std_logic_vector(1 downto 0);                     -- address
 			switches_s1_readdata                              : in  std_logic_vector(31 downto 0) := (others => 'X'); -- readdata
 			sysid_qsys_0_control_slave_address                : out std_logic_vector(0 downto 0);                     -- address
@@ -451,7 +511,147 @@ architecture rtl of my_nios1 is
 		);
 	end component my_nios1_rst_controller_002;
 
-	signal clocks_sys_clk_clk                                            : std_logic;                     -- clocks:sys_clk_clk -> [LEDs:clk, fifoed_avalon_uart_0:clk, irq_mapper:clk, jtag_uart:clk, mm_interconnect_0:clocks_sys_clk_clk, nios2_processor:clk, onchip_memory:clk, rst_controller:clk, rst_controller_002:clk, sdram:clk, switches:clk, sysid_qsys_0:clock]
+	component my_nios1_slave_template_0 is
+		generic (
+			DATA_WIDTH          : integer := 32;
+			ENABLE_SYNC_SIGNALS : integer := 0;
+			MODE_0              : integer := 2;
+			MODE_1              : integer := 2;
+			MODE_2              : integer := 2;
+			MODE_3              : integer := 2;
+			MODE_4              : integer := 2;
+			MODE_5              : integer := 2;
+			MODE_6              : integer := 2;
+			MODE_7              : integer := 2;
+			MODE_8              : integer := 2;
+			MODE_9              : integer := 2;
+			MODE_10             : integer := 2;
+			MODE_11             : integer := 2;
+			MODE_12             : integer := 2;
+			MODE_13             : integer := 2;
+			MODE_14             : integer := 2;
+			MODE_15             : integer := 2;
+			IRQ_EN              : integer := 0
+		);
+		port (
+			clk              : in  std_logic                     := 'X';             --       clock_reset.clk
+			reset            : in  std_logic                     := 'X';             -- clock_reset_reset.reset
+			slave_address    : in  std_logic_vector(8 downto 0)  := (others => 'X'); --                s0.address
+			slave_read       : in  std_logic                     := 'X';             --                  .read
+			slave_write      : in  std_logic                     := 'X';             --                  .write
+			slave_readdata   : out std_logic_vector(31 downto 0);                    --                  .readdata
+			slave_writedata  : in  std_logic_vector(31 downto 0) := (others => 'X'); --                  .writedata
+			slave_byteenable : in  std_logic_vector(3 downto 0)  := (others => 'X'); --                  .byteenable
+			user_dataout_0   : out std_logic_vector(31 downto 0);                    --    user_interface.export
+			user_dataout_1   : out std_logic_vector(31 downto 0);                    --                  .export
+			user_dataout_2   : out std_logic_vector(31 downto 0);                    --                  .export
+			user_dataout_3   : out std_logic_vector(31 downto 0);                    --                  .export
+			user_dataout_4   : out std_logic_vector(31 downto 0);                    --                  .export
+			user_dataout_5   : out std_logic_vector(31 downto 0);                    --                  .export
+			user_dataout_6   : out std_logic_vector(31 downto 0);                    --                  .export
+			user_dataout_7   : out std_logic_vector(31 downto 0);                    --                  .export
+			user_dataout_8   : out std_logic_vector(31 downto 0);                    --                  .export
+			user_dataout_9   : out std_logic_vector(31 downto 0);                    --                  .export
+			user_dataout_10  : out std_logic_vector(31 downto 0);                    --                  .export
+			user_dataout_11  : out std_logic_vector(31 downto 0);                    --                  .export
+			user_dataout_12  : out std_logic_vector(31 downto 0);                    --                  .export
+			user_dataout_13  : out std_logic_vector(31 downto 0);                    --                  .export
+			user_dataout_14  : out std_logic_vector(31 downto 0);                    --                  .export
+			user_dataout_15  : out std_logic_vector(31 downto 0);                    --                  .export
+			user_datain_0    : in  std_logic_vector(31 downto 0) := (others => 'X'); --                  .export
+			user_datain_1    : in  std_logic_vector(31 downto 0) := (others => 'X'); --                  .export
+			user_datain_2    : in  std_logic_vector(31 downto 0) := (others => 'X'); --                  .export
+			user_datain_3    : in  std_logic_vector(31 downto 0) := (others => 'X'); --                  .export
+			user_datain_4    : in  std_logic_vector(31 downto 0) := (others => 'X'); --                  .export
+			user_datain_5    : in  std_logic_vector(31 downto 0) := (others => 'X'); --                  .export
+			user_datain_6    : in  std_logic_vector(31 downto 0) := (others => 'X'); --                  .export
+			user_datain_7    : in  std_logic_vector(31 downto 0) := (others => 'X'); --                  .export
+			user_datain_8    : in  std_logic_vector(31 downto 0) := (others => 'X'); --                  .export
+			user_datain_9    : in  std_logic_vector(31 downto 0) := (others => 'X'); --                  .export
+			user_datain_10   : in  std_logic_vector(31 downto 0) := (others => 'X'); --                  .export
+			user_datain_11   : in  std_logic_vector(31 downto 0) := (others => 'X'); --                  .export
+			user_datain_12   : in  std_logic_vector(31 downto 0) := (others => 'X'); --                  .export
+			user_datain_13   : in  std_logic_vector(31 downto 0) := (others => 'X'); --                  .export
+			user_datain_14   : in  std_logic_vector(31 downto 0) := (others => 'X'); --                  .export
+			user_datain_15   : in  std_logic_vector(31 downto 0) := (others => 'X'); --                  .export
+			slave_irq        : out std_logic;
+			user_chipselect  : out std_logic_vector(15 downto 0);
+			user_read        : out std_logic;
+			user_write       : out std_logic
+		);
+	end component my_nios1_slave_template_0;
+
+	component my_nios1_slave_template_1 is
+		generic (
+			DATA_WIDTH          : integer := 32;
+			ENABLE_SYNC_SIGNALS : integer := 0;
+			MODE_0              : integer := 2;
+			MODE_1              : integer := 2;
+			MODE_2              : integer := 2;
+			MODE_3              : integer := 2;
+			MODE_4              : integer := 2;
+			MODE_5              : integer := 2;
+			MODE_6              : integer := 2;
+			MODE_7              : integer := 2;
+			MODE_8              : integer := 2;
+			MODE_9              : integer := 2;
+			MODE_10             : integer := 2;
+			MODE_11             : integer := 2;
+			MODE_12             : integer := 2;
+			MODE_13             : integer := 2;
+			MODE_14             : integer := 2;
+			MODE_15             : integer := 2;
+			IRQ_EN              : integer := 0
+		);
+		port (
+			clk              : in  std_logic                     := 'X';             --       clock_reset.clk
+			reset            : in  std_logic                     := 'X';             -- clock_reset_reset.reset
+			slave_address    : in  std_logic_vector(8 downto 0)  := (others => 'X'); --                s0.address
+			slave_read       : in  std_logic                     := 'X';             --                  .read
+			slave_write      : in  std_logic                     := 'X';             --                  .write
+			slave_readdata   : out std_logic_vector(31 downto 0);                    --                  .readdata
+			slave_writedata  : in  std_logic_vector(31 downto 0) := (others => 'X'); --                  .writedata
+			slave_byteenable : in  std_logic_vector(3 downto 0)  := (others => 'X'); --                  .byteenable
+			user_datain_0    : in  std_logic_vector(31 downto 0) := (others => 'X'); --    user_interface.export
+			user_datain_1    : in  std_logic_vector(31 downto 0) := (others => 'X'); --                  .export
+			user_datain_2    : in  std_logic_vector(31 downto 0) := (others => 'X'); --                  .export
+			user_datain_3    : in  std_logic_vector(31 downto 0) := (others => 'X'); --                  .export
+			user_datain_4    : in  std_logic_vector(31 downto 0) := (others => 'X'); --                  .export
+			user_datain_5    : in  std_logic_vector(31 downto 0) := (others => 'X'); --                  .export
+			user_datain_6    : in  std_logic_vector(31 downto 0) := (others => 'X'); --                  .export
+			user_datain_7    : in  std_logic_vector(31 downto 0) := (others => 'X'); --                  .export
+			user_datain_8    : in  std_logic_vector(31 downto 0) := (others => 'X'); --                  .export
+			user_datain_9    : in  std_logic_vector(31 downto 0) := (others => 'X'); --                  .export
+			user_datain_10   : in  std_logic_vector(31 downto 0) := (others => 'X'); --                  .export
+			user_datain_11   : in  std_logic_vector(31 downto 0) := (others => 'X'); --                  .export
+			user_datain_12   : in  std_logic_vector(31 downto 0) := (others => 'X'); --                  .export
+			user_datain_13   : in  std_logic_vector(31 downto 0) := (others => 'X'); --                  .export
+			user_datain_14   : in  std_logic_vector(31 downto 0) := (others => 'X'); --                  .export
+			user_datain_15   : in  std_logic_vector(31 downto 0) := (others => 'X'); --                  .export
+			slave_irq        : out std_logic;
+			user_chipselect  : out std_logic_vector(15 downto 0);
+			user_dataout_0   : out std_logic_vector(31 downto 0);
+			user_dataout_1   : out std_logic_vector(31 downto 0);
+			user_dataout_10  : out std_logic_vector(31 downto 0);
+			user_dataout_11  : out std_logic_vector(31 downto 0);
+			user_dataout_12  : out std_logic_vector(31 downto 0);
+			user_dataout_13  : out std_logic_vector(31 downto 0);
+			user_dataout_14  : out std_logic_vector(31 downto 0);
+			user_dataout_15  : out std_logic_vector(31 downto 0);
+			user_dataout_2   : out std_logic_vector(31 downto 0);
+			user_dataout_3   : out std_logic_vector(31 downto 0);
+			user_dataout_4   : out std_logic_vector(31 downto 0);
+			user_dataout_5   : out std_logic_vector(31 downto 0);
+			user_dataout_6   : out std_logic_vector(31 downto 0);
+			user_dataout_7   : out std_logic_vector(31 downto 0);
+			user_dataout_8   : out std_logic_vector(31 downto 0);
+			user_dataout_9   : out std_logic_vector(31 downto 0);
+			user_read        : out std_logic;
+			user_write       : out std_logic
+		);
+	end component my_nios1_slave_template_1;
+
+	signal clocks_sys_clk_clk                                            : std_logic;                     -- clocks:sys_clk_clk -> [LEDs:clk, fifoed_avalon_uart_0:clk, irq_mapper:clk, jtag_uart:clk, mm_interconnect_0:clocks_sys_clk_clk, nios2_processor:clk, onchip_memory:clk, rst_controller:clk, rst_controller_002:clk, sdram:clk, slave_template_0:clk, slave_template_1:clk, switches:clk, sysid_qsys_0:clock]
 	signal nios2_processor_data_master_readdata                          : std_logic_vector(31 downto 0); -- mm_interconnect_0:nios2_processor_data_master_readdata -> nios2_processor:d_readdata
 	signal nios2_processor_data_master_waitrequest                       : std_logic;                     -- mm_interconnect_0:nios2_processor_data_master_waitrequest -> nios2_processor:d_waitrequest
 	signal nios2_processor_data_master_debugaccess                       : std_logic;                     -- nios2_processor:debug_mem_slave_debugaccess_to_roms -> mm_interconnect_0:nios2_processor_data_master_debugaccess
@@ -481,6 +681,18 @@ architecture rtl of my_nios1 is
 	signal mm_interconnect_0_nios2_processor_debug_mem_slave_byteenable  : std_logic_vector(3 downto 0);  -- mm_interconnect_0:nios2_processor_debug_mem_slave_byteenable -> nios2_processor:debug_mem_slave_byteenable
 	signal mm_interconnect_0_nios2_processor_debug_mem_slave_write       : std_logic;                     -- mm_interconnect_0:nios2_processor_debug_mem_slave_write -> nios2_processor:debug_mem_slave_write
 	signal mm_interconnect_0_nios2_processor_debug_mem_slave_writedata   : std_logic_vector(31 downto 0); -- mm_interconnect_0:nios2_processor_debug_mem_slave_writedata -> nios2_processor:debug_mem_slave_writedata
+	signal mm_interconnect_0_slave_template_0_s0_readdata                : std_logic_vector(31 downto 0); -- slave_template_0:slave_readdata -> mm_interconnect_0:slave_template_0_s0_readdata
+	signal mm_interconnect_0_slave_template_0_s0_address                 : std_logic_vector(8 downto 0);  -- mm_interconnect_0:slave_template_0_s0_address -> slave_template_0:slave_address
+	signal mm_interconnect_0_slave_template_0_s0_read                    : std_logic;                     -- mm_interconnect_0:slave_template_0_s0_read -> slave_template_0:slave_read
+	signal mm_interconnect_0_slave_template_0_s0_byteenable              : std_logic_vector(3 downto 0);  -- mm_interconnect_0:slave_template_0_s0_byteenable -> slave_template_0:slave_byteenable
+	signal mm_interconnect_0_slave_template_0_s0_write                   : std_logic;                     -- mm_interconnect_0:slave_template_0_s0_write -> slave_template_0:slave_write
+	signal mm_interconnect_0_slave_template_0_s0_writedata               : std_logic_vector(31 downto 0); -- mm_interconnect_0:slave_template_0_s0_writedata -> slave_template_0:slave_writedata
+	signal mm_interconnect_0_slave_template_1_s0_readdata                : std_logic_vector(31 downto 0); -- slave_template_1:slave_readdata -> mm_interconnect_0:slave_template_1_s0_readdata
+	signal mm_interconnect_0_slave_template_1_s0_address                 : std_logic_vector(8 downto 0);  -- mm_interconnect_0:slave_template_1_s0_address -> slave_template_1:slave_address
+	signal mm_interconnect_0_slave_template_1_s0_read                    : std_logic;                     -- mm_interconnect_0:slave_template_1_s0_read -> slave_template_1:slave_read
+	signal mm_interconnect_0_slave_template_1_s0_byteenable              : std_logic_vector(3 downto 0);  -- mm_interconnect_0:slave_template_1_s0_byteenable -> slave_template_1:slave_byteenable
+	signal mm_interconnect_0_slave_template_1_s0_write                   : std_logic;                     -- mm_interconnect_0:slave_template_1_s0_write -> slave_template_1:slave_write
+	signal mm_interconnect_0_slave_template_1_s0_writedata               : std_logic_vector(31 downto 0); -- mm_interconnect_0:slave_template_1_s0_writedata -> slave_template_1:slave_writedata
 	signal mm_interconnect_0_onchip_memory_s1_chipselect                 : std_logic;                     -- mm_interconnect_0:onchip_memory_s1_chipselect -> onchip_memory:chipselect
 	signal mm_interconnect_0_onchip_memory_s1_readdata                   : std_logic_vector(31 downto 0); -- onchip_memory:readdata -> mm_interconnect_0:onchip_memory_s1_readdata
 	signal mm_interconnect_0_onchip_memory_s1_address                    : std_logic_vector(9 downto 0);  -- mm_interconnect_0:onchip_memory_s1_address -> onchip_memory:address
@@ -514,7 +726,7 @@ architecture rtl of my_nios1 is
 	signal irq_mapper_receiver0_irq                                      : std_logic;                     -- jtag_uart:av_irq -> irq_mapper:receiver0_irq
 	signal irq_mapper_receiver1_irq                                      : std_logic;                     -- fifoed_avalon_uart_0:irq -> irq_mapper:receiver1_irq
 	signal nios2_processor_irq_irq                                       : std_logic_vector(31 downto 0); -- irq_mapper:sender_irq -> nios2_processor:irq
-	signal rst_controller_reset_out_reset                                : std_logic;                     -- rst_controller:reset_out -> [irq_mapper:reset, mm_interconnect_0:nios2_processor_reset_reset_bridge_in_reset_reset, onchip_memory:reset, rst_controller_reset_out_reset:in, rst_translator:in_reset]
+	signal rst_controller_reset_out_reset                                : std_logic;                     -- rst_controller:reset_out -> [irq_mapper:reset, mm_interconnect_0:nios2_processor_reset_reset_bridge_in_reset_reset, onchip_memory:reset, rst_controller_reset_out_reset:in, rst_translator:in_reset, slave_template_0:reset, slave_template_1:reset]
 	signal rst_controller_reset_out_reset_req                            : std_logic;                     -- rst_controller:reset_req -> [nios2_processor:reset_req, onchip_memory:reset_req, rst_translator:reset_req_in]
 	signal nios2_processor_debug_reset_request_reset                     : std_logic;                     -- nios2_processor:debug_reset_request -> [rst_controller:reset_in1, rst_controller_001:reset_in1]
 	signal rst_controller_001_reset_out_reset                            : std_logic;                     -- rst_controller_001:reset_out -> clocks:ref_reset_reset
@@ -655,6 +867,144 @@ begin
 			zs_we_n        => sdram_we_n                                       --      .export
 		);
 
+	slave_template_0 : component my_nios1_slave_template_0
+		generic map (
+			DATA_WIDTH          => 32,
+			ENABLE_SYNC_SIGNALS => 0,
+			MODE_0              => 2,
+			MODE_1              => 2,
+			MODE_2              => 2,
+			MODE_3              => 2,
+			MODE_4              => 2,
+			MODE_5              => 2,
+			MODE_6              => 2,
+			MODE_7              => 2,
+			MODE_8              => 2,
+			MODE_9              => 2,
+			MODE_10             => 2,
+			MODE_11             => 2,
+			MODE_12             => 2,
+			MODE_13             => 2,
+			MODE_14             => 2,
+			MODE_15             => 2,
+			IRQ_EN              => 0
+		)
+		port map (
+			clk              => clocks_sys_clk_clk,                               --       clock_reset.clk
+			reset            => rst_controller_reset_out_reset,                   -- clock_reset_reset.reset
+			slave_address    => mm_interconnect_0_slave_template_0_s0_address,    --                s0.address
+			slave_read       => mm_interconnect_0_slave_template_0_s0_read,       --                  .read
+			slave_write      => mm_interconnect_0_slave_template_0_s0_write,      --                  .write
+			slave_readdata   => mm_interconnect_0_slave_template_0_s0_readdata,   --                  .readdata
+			slave_writedata  => mm_interconnect_0_slave_template_0_s0_writedata,  --                  .writedata
+			slave_byteenable => mm_interconnect_0_slave_template_0_s0_byteenable, --                  .byteenable
+			user_dataout_0   => mm_read_write_dataout_0,                          --    user_interface.export
+			user_dataout_1   => mm_read_write_dataout_1,                          --                  .export
+			user_dataout_2   => mm_read_write_dataout_2,                          --                  .export
+			user_dataout_3   => mm_read_write_dataout_3,                          --                  .export
+			user_dataout_4   => mm_read_write_dataout_4,                          --                  .export
+			user_dataout_5   => mm_read_write_dataout_5,                          --                  .export
+			user_dataout_6   => mm_read_write_dataout_6,                          --                  .export
+			user_dataout_7   => mm_read_write_dataout_7,                          --                  .export
+			user_dataout_8   => mm_read_write_dataout_8,                          --                  .export
+			user_dataout_9   => mm_read_write_dataout_9,                          --                  .export
+			user_dataout_10  => mm_read_write_dataout_10,                         --                  .export
+			user_dataout_11  => mm_read_write_dataout_11,                         --                  .export
+			user_dataout_12  => mm_read_write_dataout_12,                         --                  .export
+			user_dataout_13  => mm_read_write_dataout_13,                         --                  .export
+			user_dataout_14  => mm_read_write_dataout_14,                         --                  .export
+			user_dataout_15  => mm_read_write_dataout_15,                         --                  .export
+			user_datain_0    => mm_read_write_datain_0,                           --                  .export
+			user_datain_1    => mm_read_write_datain_1,                           --                  .export
+			user_datain_2    => mm_read_write_datain_2,                           --                  .export
+			user_datain_3    => mm_read_write_datain_3,                           --                  .export
+			user_datain_4    => mm_read_write_datain_4,                           --                  .export
+			user_datain_5    => mm_read_write_datain_5,                           --                  .export
+			user_datain_6    => mm_read_write_datain_6,                           --                  .export
+			user_datain_7    => mm_read_write_datain_7,                           --                  .export
+			user_datain_8    => mm_read_write_datain_8,                           --                  .export
+			user_datain_9    => mm_read_write_datain_9,                           --                  .export
+			user_datain_10   => mm_read_write_datain_10,                          --                  .export
+			user_datain_11   => mm_read_write_datain_11,                          --                  .export
+			user_datain_12   => mm_read_write_datain_12,                          --                  .export
+			user_datain_13   => mm_read_write_datain_13,                          --                  .export
+			user_datain_14   => mm_read_write_datain_14,                          --                  .export
+			user_datain_15   => mm_read_write_datain_15,                          --                  .export
+			slave_irq        => open,                                             --       (terminated)
+			user_write       => open,                                             --       (terminated)
+			user_read        => open,                                             --       (terminated)
+			user_chipselect  => open                                              --       (terminated)
+		);
+
+	slave_template_1 : component my_nios1_slave_template_1
+		generic map (
+			DATA_WIDTH          => 32,
+			ENABLE_SYNC_SIGNALS => 0,
+			MODE_0              => 1,
+			MODE_1              => 1,
+			MODE_2              => 1,
+			MODE_3              => 1,
+			MODE_4              => 1,
+			MODE_5              => 1,
+			MODE_6              => 1,
+			MODE_7              => 1,
+			MODE_8              => 1,
+			MODE_9              => 1,
+			MODE_10             => 1,
+			MODE_11             => 1,
+			MODE_12             => 1,
+			MODE_13             => 1,
+			MODE_14             => 1,
+			MODE_15             => 1,
+			IRQ_EN              => 0
+		)
+		port map (
+			clk              => clocks_sys_clk_clk,                               --       clock_reset.clk
+			reset            => rst_controller_reset_out_reset,                   -- clock_reset_reset.reset
+			slave_address    => mm_interconnect_0_slave_template_1_s0_address,    --                s0.address
+			slave_read       => mm_interconnect_0_slave_template_1_s0_read,       --                  .read
+			slave_write      => mm_interconnect_0_slave_template_1_s0_write,      --                  .write
+			slave_readdata   => mm_interconnect_0_slave_template_1_s0_readdata,   --                  .readdata
+			slave_writedata  => mm_interconnect_0_slave_template_1_s0_writedata,  --                  .writedata
+			slave_byteenable => mm_interconnect_0_slave_template_1_s0_byteenable, --                  .byteenable
+			user_datain_0    => mm_read_only_0,                                   --    user_interface.export
+			user_datain_1    => mm_read_only_1,                                   --                  .export
+			user_datain_2    => mm_read_only_2,                                   --                  .export
+			user_datain_3    => mm_read_only_3,                                   --                  .export
+			user_datain_4    => mm_read_only_4,                                   --                  .export
+			user_datain_5    => mm_read_only_5,                                   --                  .export
+			user_datain_6    => mm_read_only_6,                                   --                  .export
+			user_datain_7    => mm_read_only_7,                                   --                  .export
+			user_datain_8    => mm_read_only_8,                                   --                  .export
+			user_datain_9    => mm_read_only_9,                                   --                  .export
+			user_datain_10   => mm_read_only_10,                                  --                  .export
+			user_datain_11   => mm_read_only_11,                                  --                  .export
+			user_datain_12   => mm_read_only_12,                                  --                  .export
+			user_datain_13   => mm_read_only_13,                                  --                  .export
+			user_datain_14   => mm_read_only_14,                                  --                  .export
+			user_datain_15   => mm_read_only_15,                                  --                  .export
+			slave_irq        => open,                                             --       (terminated)
+			user_dataout_0   => open,                                             --       (terminated)
+			user_dataout_1   => open,                                             --       (terminated)
+			user_dataout_2   => open,                                             --       (terminated)
+			user_dataout_3   => open,                                             --       (terminated)
+			user_dataout_4   => open,                                             --       (terminated)
+			user_dataout_5   => open,                                             --       (terminated)
+			user_dataout_6   => open,                                             --       (terminated)
+			user_dataout_7   => open,                                             --       (terminated)
+			user_dataout_8   => open,                                             --       (terminated)
+			user_dataout_9   => open,                                             --       (terminated)
+			user_dataout_10  => open,                                             --       (terminated)
+			user_dataout_11  => open,                                             --       (terminated)
+			user_dataout_12  => open,                                             --       (terminated)
+			user_dataout_13  => open,                                             --       (terminated)
+			user_dataout_14  => open,                                             --       (terminated)
+			user_dataout_15  => open,                                             --       (terminated)
+			user_write       => open,                                             --       (terminated)
+			user_read        => open,                                             --       (terminated)
+			user_chipselect  => open                                              --       (terminated)
+		);
+
 	switches : component my_nios1_switches
 		port map (
 			clk      => clocks_sys_clk_clk,                       --                 clk.clk
@@ -732,6 +1082,18 @@ begin
 			sdram_s1_readdatavalid                            => mm_interconnect_0_sdram_s1_readdatavalid,                      --                                            .readdatavalid
 			sdram_s1_waitrequest                              => mm_interconnect_0_sdram_s1_waitrequest,                        --                                            .waitrequest
 			sdram_s1_chipselect                               => mm_interconnect_0_sdram_s1_chipselect,                         --                                            .chipselect
+			slave_template_0_s0_address                       => mm_interconnect_0_slave_template_0_s0_address,                 --                         slave_template_0_s0.address
+			slave_template_0_s0_write                         => mm_interconnect_0_slave_template_0_s0_write,                   --                                            .write
+			slave_template_0_s0_read                          => mm_interconnect_0_slave_template_0_s0_read,                    --                                            .read
+			slave_template_0_s0_readdata                      => mm_interconnect_0_slave_template_0_s0_readdata,                --                                            .readdata
+			slave_template_0_s0_writedata                     => mm_interconnect_0_slave_template_0_s0_writedata,               --                                            .writedata
+			slave_template_0_s0_byteenable                    => mm_interconnect_0_slave_template_0_s0_byteenable,              --                                            .byteenable
+			slave_template_1_s0_address                       => mm_interconnect_0_slave_template_1_s0_address,                 --                         slave_template_1_s0.address
+			slave_template_1_s0_write                         => mm_interconnect_0_slave_template_1_s0_write,                   --                                            .write
+			slave_template_1_s0_read                          => mm_interconnect_0_slave_template_1_s0_read,                    --                                            .read
+			slave_template_1_s0_readdata                      => mm_interconnect_0_slave_template_1_s0_readdata,                --                                            .readdata
+			slave_template_1_s0_writedata                     => mm_interconnect_0_slave_template_1_s0_writedata,               --                                            .writedata
+			slave_template_1_s0_byteenable                    => mm_interconnect_0_slave_template_1_s0_byteenable,              --                                            .byteenable
 			switches_s1_address                               => mm_interconnect_0_switches_s1_address,                         --                                 switches_s1.address
 			switches_s1_readdata                              => mm_interconnect_0_switches_s1_readdata,                        --                                            .readdata
 			sysid_qsys_0_control_slave_address                => mm_interconnect_0_sysid_qsys_0_control_slave_address,          --                  sysid_qsys_0_control_slave.address

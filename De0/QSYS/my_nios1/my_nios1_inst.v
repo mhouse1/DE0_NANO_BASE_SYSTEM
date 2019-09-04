@@ -1,5 +1,7 @@
 	my_nios1 u0 (
 		.clk_clk                                      (<connected-to-clk_clk>),                                      //                                      clk.clk
+		.fifoed_avalon_uart_0_external_connection_rxd (<connected-to-fifoed_avalon_uart_0_external_connection_rxd>), // fifoed_avalon_uart_0_external_connection.rxd
+		.fifoed_avalon_uart_0_external_connection_txd (<connected-to-fifoed_avalon_uart_0_external_connection_txd>), //                                         .txd
 		.leds_export                                  (<connected-to-leds_export>),                                  //                                     leds.export
 		.reset_reset_n                                (<connected-to-reset_reset_n>),                                //                                    reset.reset_n
 		.sdram_addr                                   (<connected-to-sdram_addr>),                                   //                                    sdram.addr
@@ -13,7 +15,53 @@
 		.sdram_we_n                                   (<connected-to-sdram_we_n>),                                   //                                         .we_n
 		.sdram_clk_clk                                (<connected-to-sdram_clk_clk>),                                //                                sdram_clk.clk
 		.switches_export                              (<connected-to-switches_export>),                              //                                 switches.export
-		.fifoed_avalon_uart_0_external_connection_rxd (<connected-to-fifoed_avalon_uart_0_external_connection_rxd>), // fifoed_avalon_uart_0_external_connection.rxd
-		.fifoed_avalon_uart_0_external_connection_txd (<connected-to-fifoed_avalon_uart_0_external_connection_txd>)  //                                         .txd
+		.mm_read_write_dataout_0                      (<connected-to-mm_read_write_dataout_0>),                      //                            mm_read_write.dataout_0
+		.mm_read_write_dataout_1                      (<connected-to-mm_read_write_dataout_1>),                      //                                         .dataout_1
+		.mm_read_write_dataout_2                      (<connected-to-mm_read_write_dataout_2>),                      //                                         .dataout_2
+		.mm_read_write_dataout_3                      (<connected-to-mm_read_write_dataout_3>),                      //                                         .dataout_3
+		.mm_read_write_dataout_4                      (<connected-to-mm_read_write_dataout_4>),                      //                                         .dataout_4
+		.mm_read_write_dataout_5                      (<connected-to-mm_read_write_dataout_5>),                      //                                         .dataout_5
+		.mm_read_write_dataout_6                      (<connected-to-mm_read_write_dataout_6>),                      //                                         .dataout_6
+		.mm_read_write_dataout_7                      (<connected-to-mm_read_write_dataout_7>),                      //                                         .dataout_7
+		.mm_read_write_dataout_8                      (<connected-to-mm_read_write_dataout_8>),                      //                                         .dataout_8
+		.mm_read_write_dataout_9                      (<connected-to-mm_read_write_dataout_9>),                      //                                         .dataout_9
+		.mm_read_write_dataout_10                     (<connected-to-mm_read_write_dataout_10>),                     //                                         .dataout_10
+		.mm_read_write_dataout_11                     (<connected-to-mm_read_write_dataout_11>),                     //                                         .dataout_11
+		.mm_read_write_dataout_12                     (<connected-to-mm_read_write_dataout_12>),                     //                                         .dataout_12
+		.mm_read_write_dataout_13                     (<connected-to-mm_read_write_dataout_13>),                     //                                         .dataout_13
+		.mm_read_write_dataout_14                     (<connected-to-mm_read_write_dataout_14>),                     //                                         .dataout_14
+		.mm_read_write_dataout_15                     (<connected-to-mm_read_write_dataout_15>),                     //                                         .dataout_15
+		.mm_read_write_datain_0                       (<connected-to-mm_read_write_datain_0>),                       //                                         .datain_0
+		.mm_read_write_datain_1                       (<connected-to-mm_read_write_datain_1>),                       //                                         .datain_1
+		.mm_read_write_datain_2                       (<connected-to-mm_read_write_datain_2>),                       //                                         .datain_2
+		.mm_read_write_datain_3                       (<connected-to-mm_read_write_datain_3>),                       //                                         .datain_3
+		.mm_read_write_datain_4                       (<connected-to-mm_read_write_datain_4>),                       //                                         .datain_4
+		.mm_read_write_datain_5                       (<connected-to-mm_read_write_datain_5>),                       //                                         .datain_5
+		.mm_read_write_datain_6                       (<connected-to-mm_read_write_datain_6>),                       //                                         .datain_6
+		.mm_read_write_datain_7                       (<connected-to-mm_read_write_datain_7>),                       //                                         .datain_7
+		.mm_read_write_datain_8                       (<connected-to-mm_read_write_datain_8>),                       //                                         .datain_8
+		.mm_read_write_datain_9                       (<connected-to-mm_read_write_datain_9>),                       //                                         .datain_9
+		.mm_read_write_datain_10                      (<connected-to-mm_read_write_datain_10>),                      //                                         .datain_10
+		.mm_read_write_datain_11                      (<connected-to-mm_read_write_datain_11>),                      //                                         .datain_11
+		.mm_read_write_datain_12                      (<connected-to-mm_read_write_datain_12>),                      //                                         .datain_12
+		.mm_read_write_datain_13                      (<connected-to-mm_read_write_datain_13>),                      //                                         .datain_13
+		.mm_read_write_datain_14                      (<connected-to-mm_read_write_datain_14>),                      //                                         .datain_14
+		.mm_read_write_datain_15                      (<connected-to-mm_read_write_datain_15>),                      //                                         .datain_15
+		.mm_read_only_0                               (<connected-to-mm_read_only_0>),                               //                             mm_read_only.0
+		.mm_read_only_1                               (<connected-to-mm_read_only_1>),                               //                                         .1
+		.mm_read_only_2                               (<connected-to-mm_read_only_2>),                               //                                         .2
+		.mm_read_only_3                               (<connected-to-mm_read_only_3>),                               //                                         .3
+		.mm_read_only_4                               (<connected-to-mm_read_only_4>),                               //                                         .4
+		.mm_read_only_5                               (<connected-to-mm_read_only_5>),                               //                                         .5
+		.mm_read_only_6                               (<connected-to-mm_read_only_6>),                               //                                         .6
+		.mm_read_only_7                               (<connected-to-mm_read_only_7>),                               //                                         .7
+		.mm_read_only_8                               (<connected-to-mm_read_only_8>),                               //                                         .8
+		.mm_read_only_9                               (<connected-to-mm_read_only_9>),                               //                                         .9
+		.mm_read_only_10                              (<connected-to-mm_read_only_10>),                              //                                         .10
+		.mm_read_only_11                              (<connected-to-mm_read_only_11>),                              //                                         .11
+		.mm_read_only_12                              (<connected-to-mm_read_only_12>),                              //                                         .12
+		.mm_read_only_13                              (<connected-to-mm_read_only_13>),                              //                                         .13
+		.mm_read_only_14                              (<connected-to-mm_read_only_14>),                              //                                         .14
+		.mm_read_only_15                              (<connected-to-mm_read_only_15>)                               //                                         .15
 	);
 

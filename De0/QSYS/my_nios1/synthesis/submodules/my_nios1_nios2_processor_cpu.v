@@ -3863,7 +3863,7 @@ reg              wait_for_one_post_bret_inst;
     2'b11;
 
   assign F_pc_no_crst_nxt = (F_pc_sel_nxt == 2'b00)? 16777224 :
-    (F_pc_sel_nxt == 2'b01)? 1544 :
+    (F_pc_sel_nxt == 2'b01)? 2568 :
     (F_pc_sel_nxt == 2'b10)? E_arith_result[26 : 2] :
     F_pc_plus_one;
 
