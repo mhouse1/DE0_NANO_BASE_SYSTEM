@@ -10,6 +10,7 @@
 #include <stdio.h>
 #include "system.h"
 #include "altera_avalon_pio_regs.h"
+#include "slave_template_macros.h"
 
 #include "serial_uart.h"
 
@@ -21,8 +22,10 @@ int main()
 
   serial_initialize();
 
+  int counter = 0;
   while (1)
   {
+	  counter
 	  //where SWITCHES_BASE is a #define from system.h
 	  //generated as a result of qsys edits
 	  dip_switch_value = IORD_ALTERA_AVALON_PIO_DATA(SWITCHES_BASE);
@@ -43,6 +46,10 @@ int main()
 
 	  //serial_read();
 	  serial_print();
+
+	  IOWR_32DIRECT(SLAVE_TEMPLATE_0_BASE, (DATA_OUT_0*4), 307);
+
+
   }
   return 0;
 }
